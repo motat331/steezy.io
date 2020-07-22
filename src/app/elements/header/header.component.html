@@ -1,0 +1,30 @@
+
+<header id="main-header">
+    <div class="container-fluid px-5">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div id="header-logo-container">
+                <a routerLink="/"><img src="assets/images/STZYLOGO-v2.png" alt="Steezysite Logo"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+                        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li routerLinkActive="active" class="nav-item">
+                        <a class="nav-link" routerLink="/projects">Websites</a>
+                    </li>
+                    <!-- <li routerLinkActive="active" class="nav-item">
+                        <a class="nav-link" href="#">Graphics</a>
+                    </li>
+                    <li routerLinkActive="active" class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

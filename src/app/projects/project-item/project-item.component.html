@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center my-5">
+            <h2>
+                {{ project.name }}
+            </h2>
+            <h4>
+                {{ project.description }}
+            </h4>
+            <hr>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-sm-12"><img src="{{ project.imageUrl }}" alt="{{ project.name }}" class="img-responsive"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div 
+            class="overview"
+            [innerHtml]="project.bodyText"></div>
+        </div>
+    </div>
+</div>

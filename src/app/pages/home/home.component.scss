@@ -1,0 +1,42 @@
+section#latest-projects {
+    h3 {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 2em;
+        text-transform: capitalize;
+        color: black;
+        letter-spacing: 1px;
+    }
+    #work-statement {
+        font-family: "Rubik", sans-serif;
+        font-weight: 300;
+        font-size: 1.6rem;
+
+        div {
+            width: 80%;
+        }
+    }
+    .project-seperator {
+        background-color: black;
+        width: 100%;
+        height: 1px;
+        background-color: #d3d3d3;
+        margin: 0 auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sideways-rectangle {
+        width:400px;
+        margin:0 auto;
+    }
+
+    #viewMoreProjects {
+        font-size:1.2rem;
+        color:#404040;
+        text-transform:uppercase;
+        font-family:'Rubik', sans-serif;
+    }
+}

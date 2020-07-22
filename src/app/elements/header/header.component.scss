@@ -1,0 +1,16 @@
+header#thin-header {
+    background-color:#131314;
+    color:white;
+}
+
+header#main-header {
+    background-color: #212125;
+    font-family:"Poppins", Arial, Helvetica, sans-serif;
+    #header-logo-container {
+        padding:10px 0px;
+
+        img {
+            width: 100px;
+        }
+    }
+}

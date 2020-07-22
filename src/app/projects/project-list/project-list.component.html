@@ -1,0 +1,18 @@
+<div class="container py-5">
+    <div class="row">
+        <div *ngFor='let project of projects | slice:0:6;' class="col-6 p-0">
+            <a [routerLink]="['/projects', project.slug]">
+                <div class="hover-container">
+                    <img class="steezy-image" src="{{ project.imageUrl }}">
+                    <div class="proj-container">
+                        <div class="proj-inner">
+                            <h2>{{ project.name }}</h2>
+                            <span class='proj-subtext'>{{ project.description }}</span>
+                            <span class='proj-button'>{{ project.name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

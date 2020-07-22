@@ -1,0 +1,93 @@
+.homepage-slider {
+    background-image: url("/assets/images/STZY_splashscreen_background.jpg");
+    background-size: cover;
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh) !important;
+
+    .container-fluid {
+        padding-bottom:65px;
+    }
+
+    .splashscreenContainer {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 5rem;
+    }
+
+    #get-started {
+        margin-top: 20px;
+
+        a {
+            text-decoration: none;
+        }
+
+        span {
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: 1.4rem;
+            color: #df575c;
+            border-radius: 6px;
+            padding: 10px 10px;
+            transition: background-color 2s;
+            background-color:#8e4de4;
+            color: white;
+            display: inline-block;
+
+            &:hover {
+                cursor: pointer;
+                transition: background-color 2s;
+                background-color:rgba(142, 77, 228, 0.09);
+                color: #8e4de4;
+                transition: color 2s ease;
+
+            }
+
+            fa-icon {
+                margin-left: 1px;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+
+    .slider-text {
+        float: left;
+        margin-right: 20px;
+
+        fa-icon {
+            color:rgb(78, 156, 68);
+            margin-right:10px;
+        }
+
+        span {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.1rem;
+            display: block;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        :before {
+            font-size: 25px;
+        }
+    }
+    h1 {
+        font-size: 3.4rem;
+        color: #2c2c2c;
+        line-height: 1.2;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        margin-left: -4px;
+    }
+
+    h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        display: block;
+        font-weight: 400;
+        margin-bottom: 10px;
+        padding: 15px 0px;
+        line-height:1.5;
+    }
+}
