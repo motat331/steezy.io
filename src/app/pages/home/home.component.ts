@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ParamsService } from '../../projects/shared/params.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  sliceAmount: number;
 
-  ngOnInit(): void {
+  constructor(private data: ParamsService) { }
+
+  ngOnInit() {
+    this.data.currentMessage.subscribe(sliceAmount => this.sliceAmount = sliceAmount);
+    this.data.changeSliceAmount(4);
 
   }
 

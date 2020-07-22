@@ -12,6 +12,7 @@ import { SplashscreenComponent } from './pages/home/splashscreen/splashscreen.co
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GetstartedComponent } from './pages/home/getstarted/getstarted.component';
 import { FooterComponent } from './elements/footer/footer.component';
+import { ParamsService } from './projects/shared/params.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FooterComponent } from './elements/footer/footer.component';
     FontAwesomeModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ParamsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from './shared/project.service';
+import { ParamsService } from './shared/params.service';
 
 @Component({
   selector: 'app-project',
@@ -17,9 +18,14 @@ export class ProjectsComponent implements OnInit {
     imageUrl: string 
   }[] = [];
 
-  constructor(private projectService: ProjectService) { }
+  sliceAmount: number;
+
+  constructor(private projectService: ProjectService,
+              private paramsService: ParamsService) { }
 
   ngOnInit(): void {
+    this.paramsService.currentMessage.subscribe(sliceAmount => this.sliceAmount = sliceAmount);
+    this.paramsService.changeSliceAmount(10)
     this.projects = this.projectService.projects;
   }
 
