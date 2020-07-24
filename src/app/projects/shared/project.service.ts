@@ -1,6 +1,7 @@
 import { OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Project } from './project.model';
 
 @Injectable({
     providedIn: 'root'
@@ -15,23 +16,10 @@ export class ProjectService {
 
     getAllProjects(): Observable<any> {
         return  this.http.get<any>('https://admin.steezy.io/wp-json/wp/v2/posts?_embed&categories=5');
-
-        // return this.http.get<any[]>('https://admin.steezy.io/wp-json/wp/v2/posts?_embed', {
-        //     params: {
-        //         per_page: '6'
-        //     }
-        // });
     }
 
 
-
-
-    getProject(slug: string) {
-        const project = this.projects.find(
-            (p) => {
-                return p.slug === slug;
-            }
-        );
-        return project;
+    getSingleProject(slug: string): Observable<Project> {
+        return  this.http.get<any>('https://admin.steezy.io/wp-json/wp/v2/posts?_embed&slug=' + slug);
     }
 }

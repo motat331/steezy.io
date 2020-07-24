@@ -25,7 +25,6 @@ export class ProjectListComponent implements OnInit {
   ngOnInit(): void {
     this.getPosts();
     this.paramsService.currentMessage.subscribe(sliceAmount => this.sliceAmount = sliceAmount);
-    // this.projects = this.projectService.projects;
   }
 
   public getPosts(){

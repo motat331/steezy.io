@@ -1,23 +1,23 @@
-<div class="container">
+<div class="container" *ngFor="let project of project;">
     <div class="row">
         <div class="col-sm-12 text-center my-5">
             <h2>
-                {{ project.name }}
+                {{ project.acf.projectDescription }}
             </h2>
             <h4>
-                {{ project.description }}
+                {{ project.acf.projectTypeOfWork }}
             </h4>
             <hr>
         </div>
     </div>
     <div class="row mb-5">
-        <div class="col-sm-12"><img src="{{ project.imageUrl }}" alt="{{ project.name }}" class="img-responsive"></div>
+        <div class="col-sm-12"><img src="{{ project._embedded['wp:featuredmedia']['0'].source_url }}" alt="{{ project.title.rendered }}" class="img-responsive"></div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div 
             class="overview"
-            [innerHtml]="project.bodyText"></div>
+            [innerHtml]="project.content.rendered"></div>
         </div>
     </div>
 </div>
