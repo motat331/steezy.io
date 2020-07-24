@@ -3,7 +3,7 @@
         <div *ngFor='let project of projects | slice:0:sliceAmount;' class="col-6 p-0">
             <a [routerLink]="['/projects', project.slug]">
                 <div class="hover-container">
-                    <img class="steezy-image" src="{{ project._embedded['wp:featuredmedia']['0'].source_url }}">
+                    <img class="steezy-image" src="{{ project.better_featured_image.source_url }}">
                     <div class="proj-container">
                         <div class="proj-inner">
                             <h2>{{ project.acf.projectDescription }}</h2>

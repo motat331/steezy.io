@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
 import { ActivatedRoute } from '@angular/router';
-import { Project } from '../shared/project.model';
+import { Project, Acf } from '../shared/project.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,22 +10,32 @@ import { Observable } from 'rxjs';
   styleUrls: ['./project-item.component.scss']
 })
 export class ProjectItemComponent implements OnInit {
-  // project: Observable<Project[]>;
-  project: Observable<any[]>;
+  project = new Array<Project>();
 
   constructor(private projectService: ProjectService,
-              private route: ActivatedRoute) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const slug = this.route.snapshot.params['slug'];
     this.getSingleProject(slug);
   }
 
-  public getSingleProject(slug: string){
-    this.projectService.getSingleProject(slug).subscribe((data:  Observable<any>) => {
-        this.project = data;
-        console.log(data);
+  public getSingleProject(slug: string) {
+    this.projectService.getSingleProject(slug).subscribe(response => {
+      this.project = response.map(item => {
+        return new Project(
+          item.id,
+          item.slug,
+          item.title,
+          item.content,
+          item.better_featured_image,
+          new Acf(
+            item.acf.projectDescription,
+            item.acf.projectTypeOfWork,
+          )
+        );
+      });
+      // console.log(this.project);
     });
   }
-
 }

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
-import { Project } from '../shared/project.model';
-import { Observable } from 'rxjs';
+import { Project, Acf } from '../shared/project.model';
 import { ParamsService } from '../shared/params.service';
-
-
 
 @Component({
   selector: 'app-project-list',
@@ -12,8 +9,8 @@ import { ParamsService } from '../shared/params.service';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
-  
-  projects: Observable<any[]>;
+
+  projects = new Array<Project>();
 
   sliceAmount: number;
 
@@ -27,11 +24,22 @@ export class ProjectListComponent implements OnInit {
     this.paramsService.currentMessage.subscribe(sliceAmount => this.sliceAmount = sliceAmount);
   }
 
-  public getPosts(){
-    this.projectService.getAllProjects().subscribe((data:  Observable<any>) => {
-        this.projects = data;
-        console.log(data);
+  public getPosts() {
+    this.projectService.getAllProjects().subscribe(response => {
+      this.projects = response.map(item => {
+        return new Project(
+          item.id,
+          item.slug,
+          item.title,
+          item.content,
+          item.better_featured_image,
+          new Acf(
+            item.acf.projectDescription,
+            item.acf.projectTypeOfWork,
+          ) 
+        );
+      });
     });
-}
+  }
 
 }
