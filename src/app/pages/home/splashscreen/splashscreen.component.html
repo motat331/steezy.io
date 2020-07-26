@@ -1,24 +1,51 @@
-<div class='homepage-slider'>
+<div class="homepage-slider py-5">
     <!-- <div class='splashscreenContainer'> -->
-        <div class="container-fluid my-auto">
-        	<div class="row px-5">
-        		<div class="col-lg-7">
-        			<h1>Website Development For Your Business Or Product.</h1>
-        			<h2>Steezy is a website development agency specializing in building you an online presence with effective mobile responsive websites.</h2>
-        			<div class='slider-text'>
-        			    <span><fa-icon [icon]="faCheckCircle"></fa-icon> 100% Customer Satisfaction</span>
-        			    <span><fa-icon [icon]="faCheckCircle"></fa-icon> Responsive Design</span>
-        			    <span><fa-icon [icon]="faCheckCircle"></fa-icon> Premium Support</span>
-        			    <span><fa-icon [icon]="faCheckCircle"></fa-icon> Improve Google Ranking</span>
-        			</div>
-        			<div style='clear:both;'></div>
-        			<div id="get-started">
-        			    <a href="//steezysite.com/contact"><span>Get Started <fa-icon [icon]="faChevronRight"></fa-icon></span> </a>
-        			</div>
-        		</div>
-        	</div>
-		</div>
-		<img style="width:100%; position:absolute; bottom:-100px;" src="assets/images/wavegreen-01.svg" alt="">
-	<!-- </div> -->
-	
+    <div class="container-fluid my-auto">
+        <div class="row px-5">
+            <div class="col-lg-7 my-auto">
+                <h1>Website Development For Your Business Or Product.</h1>
+                <h2>
+                    Steezy is a website development agency specializing in
+                    building you an online presence with effective mobile
+                    responsive websites.
+                </h2>
+                <div class="slider-text">
+                    <span>
+                        <fa-icon [icon]="faCheckCircle"></fa-icon> 100% Customer
+                        Satisfaction
+                    </span>
+                    <span>
+                        <fa-icon [icon]="faCheckCircle"></fa-icon> Responsive
+                        Design
+                    </span>
+                    <span>
+                        <fa-icon [icon]="faCheckCircle"></fa-icon> Premium
+                        Support
+                    </span>
+                    <span>
+                        <fa-icon [icon]="faCheckCircle"></fa-icon> Improve
+                        Google Ranking
+                    </span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="col-lg-5">
+                <ngx-slick-carousel
+                    class="carousel"
+                    #slickModal="slick-carousel"
+                    [config]="slideConfig"
+                >
+                    <div
+                        ngxSlickItem
+                        *ngFor="let slide of slides"
+                        class="slide"
+                    >
+                        <img src="{{ slide.img }}" alt="" width="100%" />
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+    <img id="splashSwoosh" src="assets/images/WaveThin.svg" alt="" />
+    <!-- </div> -->
 </div>

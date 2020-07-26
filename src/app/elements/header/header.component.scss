@@ -1,16 +1,55 @@
 header#thin-header {
-    background-color:#131314;
-    color:white;
+    background-color: #131314;
+    color: white;
 }
 
 header#main-header {
     background-color: #212125;
-    font-family:"Poppins", Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     #header-logo-container {
-        padding:10px 0px;
+        padding: 25px 0px;
 
         img {
             width: 100px;
+        }
+    }
+
+    li {
+        a {
+            font-size: 1.3rem;
+            font-family: "Poppins", sans-serif;
+        }
+    }
+}
+
+#get-started {
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        font-family: Poppins;
+        font-weight: 500;
+        font-size: 1.3rem;
+        color: #df575c;
+        border-radius: 6px;
+        padding: 5px 10px;
+        transition: background-color 2s;
+        background-color: #8e4de4;
+        color: white;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+            transition: background-color 2s;
+            background-color: rgba(142, 77, 228, 0.09);
+            color: #8e4de4;
+            transition: color 2s ease;
+        }
+
+        fa-icon {
+            margin-left: 1px;
+            font-size: 1.2rem;
         }
     }
 }

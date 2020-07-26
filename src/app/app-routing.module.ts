@@ -7,18 +7,22 @@ import { ProjectsComponent } from './projects/projects.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'projects', component: ProjectsComponent, children: [
-      { path: '', component: ProjectListComponent },
-      { path: ':slug', component: ProjectItemComponent },
-    ] }
+    {
+        path: 'projects',
+        component: ProjectsComponent,
+        children: [
+            { path: '', component: ProjectListComponent },
+            { path: ':slug', component: ProjectItemComponent },
+        ],
+    },
 ];
 
-
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'})],
-    exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(appRoutes, {
+            scrollPositionRestoration: 'disabled',
+        }),
+    ],
+    exports: [RouterModule],
 })
-
-export class AppRoutingModule {
-  
-}
+export class AppRoutingModule {}

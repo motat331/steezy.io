@@ -29,14 +29,38 @@ section#latest-projects {
     }
 
     .sideways-rectangle {
-        width:400px;
-        margin:0 auto;
+        width: 400px;
+        margin: 0 auto;
     }
 
     #viewMoreProjects {
-        font-size:1.2rem;
-        color:#404040;
-        text-transform:uppercase;
-        font-family:'Rubik', sans-serif;
+        font-size: 1.2rem;
+        color: #404040;
+        text-transform: uppercase;
+        font-family: "Rubik", sans-serif;
+    }
+}
+
+#contactForm {
+    background: rgba(228, 230, 231, 0.4);
+
+    h3 {
+        font-family: "Poppins", sans-serif;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 1.1;
+        line-height: 1.8;
+        font-weight: 300;
+    }
+}
+@media (max-width: 758px) {
+    section#latest-projects .sideways-rectangle {
+        width: 100%;
+    }
+    #work-statement {
+        font-size: 1.3rem;
     }
 }

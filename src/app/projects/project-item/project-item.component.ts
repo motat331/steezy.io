@@ -5,37 +5,55 @@ import { Project, Acf } from '../shared/project.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-project-item',
-  templateUrl: './project-item.component.html',
-  styleUrls: ['./project-item.component.scss']
+    selector: 'app-project-item',
+    templateUrl: './project-item.component.html',
+    styleUrls: ['./project-item.component.scss'],
 })
 export class ProjectItemComponent implements OnInit {
-  project = new Array<Project>();
+    project = new Array<Project>();
 
-  constructor(private projectService: ProjectService,
-    private route: ActivatedRoute) { }
+    constructor(
+        private projectService: ProjectService,
+        private route: ActivatedRoute
+    ) {}
 
-  ngOnInit(): void {
-    const slug = this.route.snapshot.params['slug'];
-    this.getSingleProject(slug);
-  }
+    ngOnInit(): void {
+        const slug = this.route.snapshot.params['slug'];
+        const singleProject = this.getSingleProject(slug);
+        return singleProject;
+    }
 
-  public getSingleProject(slug: string) {
-    this.projectService.getSingleProject(slug).subscribe(response => {
-      this.project = response.map(item => {
-        return new Project(
-          item.id,
-          item.slug,
-          item.title,
-          item.content,
-          item.better_featured_image,
-          new Acf(
-            item.acf.projectDescription,
-            item.acf.projectTypeOfWork,
-          )
-        );
-      });
-      // console.log(this.project);
-    });
-  }
+    slides = [
+        { img: '/assets/images/Perspective_ChaseFiedler.png' },
+        { img: '/assets/images/Perspective_InfiniteILA.png' },
+    ];
+
+    slideConfig = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        cssEase: 'linear',
+    };
+
+    public getSingleProject(slug: string) {
+        this.projectService.getSingleProject(slug).subscribe((response) => {
+            this.project = response.map((item) => {
+                return new Project(
+                    item.id,
+                    item.slug,
+                    item.title,
+                    item.content,
+                    item.better_featured_image,
+                    new Acf(
+                        item.acf.projectDescription,
+                        item.acf.projectTypeOfWork,
+                        item.acf.sliderLinks.split(',')
+                    )
+                );
+            });
+            console.log(this.project);
+        });
+    }
 }
