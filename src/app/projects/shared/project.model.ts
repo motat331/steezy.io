@@ -13,6 +13,6 @@ export class Acf {
     constructor(
         public projectDescription: string,
         public projectTypeOfWork: string,
-        public sliderLinks: any
+        public sliderLinks: any = null
     ) {}
 }

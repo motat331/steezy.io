@@ -1,15 +1,20 @@
 <div class="container" *ngFor="let project of project">
-    {{ project.acf.sliderLinks[1] }}
-
-    <div class="row">
-        <div class="col-sm-12 text-center my-5">
+    <div class="row my-5">
+        <div class="col-sm-12 text-center">
+            <h1>
+                {{ project.title.rendered }}
+            </h1>
             <h2>
                 {{ project.acf.projectDescription }}
             </h2>
             <h4>
                 {{ project.acf.projectTypeOfWork }}
             </h4>
-            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-5 mx-auto">
+            <div class="project-divider"></div>
         </div>
     </div>
     <div class="row mb-5">
@@ -24,6 +29,23 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="overview" [innerHtml]="project.content.rendered"></div>
+        </div>
+    </div>
+    <div class="row py-5" *ngIf="project.acf.sliderLinks">
+        <div class="col-sm-4 mx-auto">
+            <ngx-slick-carousel
+                class="carousel"
+                #slickModal="slick-carousel"
+                [config]="slideConfig"
+            >
+                <div
+                    ngxSlickItem
+                    *ngFor="let sliderLink of project.acf.sliderLinks"
+                    class="slide"
+                >
+                    <img src="{{ sliderLink }}" alt="" width="100%" />
+                </div>
+            </ngx-slick-carousel>
         </div>
     </div>
 </div>

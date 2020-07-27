@@ -23,11 +23,6 @@ export class ProjectItemComponent implements OnInit {
         return singleProject;
     }
 
-    slides = [
-        { img: '/assets/images/Perspective_ChaseFiedler.png' },
-        { img: '/assets/images/Perspective_InfiniteILA.png' },
-    ];
-
     slideConfig = {
         slidesToShow: 1,
         slidesToScroll: 1,
