@@ -35,7 +35,7 @@ import { ContactFormComponent } from './elements/contact-form/contact-form.compo
         ContactFormComponent,
     ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         FontAwesomeModule,
         AppRoutingModule,
         HttpClientModule,
