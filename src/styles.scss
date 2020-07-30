@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
 html,
 body,
 p,
 span {
     font-family: "Poppins", sans-serif;
+}
+
+fa-icon svg {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+}
+fa-icon .fa-2x{
+  height: 2em;
 }
