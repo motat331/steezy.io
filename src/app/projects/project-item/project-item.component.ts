@@ -3,6 +3,7 @@ import { ProjectService } from '../shared/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Acf } from '../shared/project.model';
 import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-project-item',
@@ -14,7 +15,8 @@ export class ProjectItemComponent implements OnInit {
 
     constructor(
         private projectService: ProjectService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private title: Title
     ) {}
 
     ngOnInit(): void {
@@ -48,6 +50,7 @@ export class ProjectItemComponent implements OnInit {
                     )
                 );
             });
+            this.title.setTitle(this.project[0].title.rendered);
             console.log(this.project);
         });
     }
