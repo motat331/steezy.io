@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Acf } from '../shared/project.model';
-import { Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 
 @Component({

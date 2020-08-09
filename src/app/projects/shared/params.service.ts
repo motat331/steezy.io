@@ -3,14 +3,12 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class ParamsService {
+    private projectDisplayScopeSource = new BehaviorSubject(4);
+    currentMessage = this.projectDisplayScopeSource.asObservable();
 
-  private projectDisplayScopeSource = new BehaviorSubject(4);
-  currentMessage = this.projectDisplayScopeSource.asObservable();
+    constructor() {}
 
-  constructor() { }
-
-  changeSliceAmount(projectDisplayScope: number) {
-    this.projectDisplayScopeSource.next(projectDisplayScope)
-  }
-
+    changeSliceAmount(projectDisplayScope: number) {
+        this.projectDisplayScopeSource.next(projectDisplayScope);
+    }
 }
