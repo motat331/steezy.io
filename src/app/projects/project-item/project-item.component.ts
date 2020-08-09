@@ -11,7 +11,8 @@ import { Title } from '@angular/platform-browser';
     styleUrls: ['./project-item.component.scss'],
 })
 export class ProjectItemComponent implements OnInit {
-    project = new Array<Project>();
+    // project = new Array<Project>();
+    project: any;
 
     constructor(
         private projectService: ProjectService,
