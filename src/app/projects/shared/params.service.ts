@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class ParamsService {
     private projectDisplayScopeSource = new BehaviorSubject(4);
     currentMessage = this.projectDisplayScopeSource.asObservable();
