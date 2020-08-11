@@ -1,10 +1,8 @@
-<p>the message: {{ projects[0] }}</p>
+<!-- *ngFor="let project of projects | slice: 0:sliceAmount | async" -->
+
 <div class="container py-5">
     <div class="row">
-        <div
-            *ngFor="let project of data | slice: 0:sliceAmount"
-            class="col-lg-6 p-0"
-        >
+        <div *ngFor="let project of projects | async" class="col-lg-6 p-0">
             <a [routerLink]="['/projects', project.slug]">
                 <div class="hover-container">
                     <img

@@ -3,6 +3,7 @@ import { ProjectService } from '../shared/project.service';
 import { Project, Acf } from '../shared/project.model';
 import { ParamsService } from '../shared/params.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-project-list',
@@ -10,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./project-list.component.scss'],
 })
 export class ProjectListComponent implements OnInit {
-    projects = new Array<Project>();
+    // projects = new Array<Project>();
+    projects: Observable<Project[]>;
     data: any;
     sliceAmount: number;
 
@@ -21,52 +23,10 @@ export class ProjectListComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        // this.data = this.route.data.subscribe((data) => console.log(data));
-        // this.data = this.route.snapshot.data['projects'].subscribe((data) => console.log(data));
-        this.data = this.route.snapshot.data['projects'];
-        console.log(this.data);
-        // this.projectService.getAllProjects();
-        // this.getPosts();
+        this.projects = this.projectService.allProjects;
+        console.log(this.projectService.allProjects[0]);
         this.paramsService.currentMessage.subscribe(
             (sliceAmount) => (this.sliceAmount = sliceAmount)
         );
-    }
-
-    // public getPosts() {
-    //     this.projectService.getAllProjects().subscribe((response) => {
-    //         this.projects = response.map((item) => {
-    //             return new Project(
-    //                 item.id,
-    //                 item.slug,
-    //                 item.title,
-    //                 item.content,
-    //                 item.better_featured_image,
-    //                 new Acf(
-    //                     item.acf.projectDescription,
-    //                     item.acf.projectTypeOfWork,
-    //                     item.acf.sliderLinks
-    //                 )
-    //             );
-    //         });
-    //     });
-    // }
-    public getPosts() {
-        this.projectService.getAllProjects().subscribe((response) => {
-            this.projects = response.map((item) => {
-                return new Project(
-                    item.id,
-                    item.slug,
-                    item.title,
-                    item.content,
-                    item.better_featured_image,
-                    new Acf(
-                        item.acf.projectDescription,
-                        item.acf.projectTypeOfWork,
-                        item.acf.sliderLinks
-                    )
-                );
-            });
-            console.log(this.projects);
-        });
     }
 }

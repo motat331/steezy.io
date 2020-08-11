@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, shareReplay } from 'rxjs/operators';
 import { Project, Acf } from './project.model';
 
 @Injectable({
@@ -10,8 +10,11 @@ import { Project, Acf } from './project.model';
 export class ProjectService {
     projectsScope = '5';
     projects = [];
+    cache$: Observable<Project[]>;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+        console.log('yo');
+    }
 
     getAllProjects(): Observable<Project[]> {
         return this.http.get<any>(
@@ -19,7 +22,15 @@ export class ProjectService {
         );
     }
 
-    fetchRecipes() {
+    get allProjects() {
+        if (!this.cache$) {
+            console.log('cached');
+            this.cache$ = this.fetchProjects().pipe(shareReplay(1));
+        }
+        return this.cache$;
+    }
+
+    fetchProjects() {
         return this.http
             .get<Project[]>(
                 'https://admin.steezy.io/wp-json/wp/v2/posts?categories=5'
@@ -40,9 +51,6 @@ export class ProjectService {
                             )
                         );
                     });
-                }),
-                tap((projects) => {
-                    this.setProjects(projects);
                 })
             );
     }

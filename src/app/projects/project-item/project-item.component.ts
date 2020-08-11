@@ -23,6 +23,8 @@ export class ProjectItemComponent implements OnInit {
         const slug = this.route.snapshot.params['slug'];
         const singleProject = this.getSingleProject(slug);
         return singleProject;
+        // this.project = this.projectService.allProjects[0];
+        // console.log(this.project);
     }
 
     slideConfig = {
