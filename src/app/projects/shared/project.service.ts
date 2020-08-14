@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, tap, shareReplay } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { map, shareReplay, tap, filter, first } from 'rxjs/operators';
 import { Project, Acf } from './project.model';
 
 @Injectable({
@@ -12,9 +12,7 @@ export class ProjectService {
     projects = [];
     cache$: Observable<Project[]>;
 
-    constructor(private http: HttpClient) {
-        console.log('yo');
-    }
+    constructor(private http: HttpClient) {}
 
     getAllProjects(): Observable<Project[]> {
         return this.http.get<any>(
@@ -22,9 +20,15 @@ export class ProjectService {
         );
     }
 
+    get singleProject() {
+        if (!this.cache$) {
+            this.cache$ = this.fetchProjects().pipe(shareReplay(1));
+        }
+        return this.cache$;
+    }
+
     get allProjects() {
         if (!this.cache$) {
-            console.log('cached');
             this.cache$ = this.fetchProjects().pipe(shareReplay(1));
         }
         return this.cache$;

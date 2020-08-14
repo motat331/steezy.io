@@ -1,20 +1,37 @@
-section#latest-projects {
+section#services-offered {
+    h5 {
+        letter-spacing: 4px;
+        font-size: 1rem;
+    }
+    h4 {
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
     h3 {
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-        font-size: 2em;
-        text-transform: capitalize;
-        color: black;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        font-size: 2rem;
+    }
+}
+
+section#latest-projects {
+    h5 {
+        letter-spacing: 4px;
+        font-size: 1rem;
+    }
+    h2 {
+        font-family: "Encode Sans Semi Expanded", sans-serif;
+        font-size: 6rem;
+        font-weight: 600;
+    }
+    h3 {
+        letter-spacing: 2px;
+        font-size: 2rem;
     }
     #work-statement {
-        font-family: "Rubik", sans-serif;
         font-weight: 300;
-        font-size: 1.6rem;
-
-        div {
-            width: 80%;
-        }
+        font-size: 1.3rem;
     }
     .project-seperator {
         background-color: black;

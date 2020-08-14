@@ -15,20 +15,6 @@ export class SplashscreenComponent implements OnInit {
     faChevronRight = faChevronRight;
     faCheckCircle = faCheckCircle;
 
-    slides = [
-        { img: '/assets/images/Perspective_ChaseFiedler.png' },
-        { img: '/assets/images/Perspective_InfiniteILA.png' },
-    ];
-
-    slideConfig = {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        cssEase: 'linear',
-    };
-
     constructor() {}
 
     ngOnInit(): void {}

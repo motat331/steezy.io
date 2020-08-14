@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let project of project">
+<div class="container" *ngIf="project$ | async as project">
     <div class="row my-5">
         <div class="col-sm-12 text-center">
             <h1>

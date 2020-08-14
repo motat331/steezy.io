@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Acf } from '../shared/project.model';
 import { Title } from '@angular/platform-browser';
+import { find, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-project-item',
     templateUrl: './project-item.component.html',
     styleUrls: ['./project-item.component.scss'],
 })
-export class ProjectItemComponent implements OnInit {
+export class ProjectItemComponent implements OnInit, AfterViewInit {
     // project = new Array<Project>();
     project: any;
+    project$: any;
+    cache$: any;
 
     constructor(
         private projectService: ProjectService,
@@ -21,11 +25,27 @@ export class ProjectItemComponent implements OnInit {
 
     ngOnInit(): void {
         const slug = this.route.snapshot.params['slug'];
-        const singleProject = this.getSingleProject(slug);
-        return singleProject;
-        // this.project = this.projectService.allProjects[0];
-        // console.log(this.project);
+
+        if (this.cache$) {
+            this.project$ = this.projectService.cache$.pipe(
+                map((projects) =>
+                    projects.find((project) => project.slug == slug)
+                )
+            );
+        } else {
+            this.project$ = this.projectService.allProjects.pipe(
+                map((projects) =>
+                    projects.find((project) => project.slug == slug)
+                )
+            );
+        }
+        return this.project$;
+
+        // const singleProject = this.getSingleProject(slug);
+        // return singleProject;
     }
+
+    ngAfterViewInit() {}
 
     slideConfig = {
         slidesToShow: 1,
