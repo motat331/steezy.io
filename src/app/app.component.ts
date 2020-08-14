@@ -15,14 +15,18 @@ export class AppComponent {
     title = 'steezysite2';
     isLoaded: boolean;
 
-    constructor(private _router: Router) {}
+    constructor(private router: Router) {}
 
     ngOnInit() {
         this.routerEvents();
     }
 
+    isHomeRoute() {
+        return this.router.url === '/';
+    }
+
     routerEvents() {
-        this._router.events.subscribe((event: RouterEvent) => {
+        this.router.events.subscribe((event: RouterEvent) => {
             switch (true) {
                 case event instanceof NavigationStart: {
                     this.isLoaded = true;

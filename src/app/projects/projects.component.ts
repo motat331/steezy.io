@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from './shared/project.service';
 import { ParamsService } from './shared/params.service';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'app-project',
@@ -9,10 +10,16 @@ import { ParamsService } from './shared/params.service';
 })
 export class ProjectsComponent implements OnInit {
     sliceAmount: number;
+    projects$: any;
 
-    constructor(private paramsService: ParamsService) {}
+    constructor(
+        private paramsService: ParamsService,
+        private projectService: ProjectService
+    ) {}
 
     ngOnInit(): void {
+        this.projects$ = this.projectService.allProjects;
+
         this.paramsService.currentMessage.subscribe(
             (sliceAmount) => (this.sliceAmount = sliceAmount)
         );

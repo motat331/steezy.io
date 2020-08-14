@@ -11,7 +11,7 @@ const appRoutes: Routes = [
         component: ProjectsComponent,
         // resolve: [ProjectsResolverService],
         // resolve: { projects: ProjectsResolverService },
-        children: [{ path: '', component: ProjectListComponent }],
+        // children: [{ path: '', component: ProjectListComponent }],
     },
     {
         path: 'projects/:slug',

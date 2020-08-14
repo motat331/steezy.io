@@ -40,9 +40,6 @@ export class ProjectItemComponent implements OnInit, AfterViewInit {
             );
         }
         return this.project$;
-
-        // const singleProject = this.getSingleProject(slug);
-        // return singleProject;
     }
 
     ngAfterViewInit() {}

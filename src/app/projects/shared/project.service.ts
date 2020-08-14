@@ -51,7 +51,8 @@ export class ProjectService {
                             new Acf(
                                 item.acf.projectDescription,
                                 item.acf.projectTypeOfWork,
-                                item.acf.sliderLinks
+                                item.acf.sliderLinks,
+                                item.acf.featured
                             )
                         );
                     });
