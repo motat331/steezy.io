@@ -1,7 +1,7 @@
-<div class="container py-5">
+<div class="container pt-lg-5">
     <div class="row">
         <div
-            class="col-lg-4"
+            class="project-item col-lg-4"
             *ngFor="let project of projects$ | async | slice: 0:sliceAmount"
         >
             <a [routerLink]="['/projects', project.slug]">
@@ -13,7 +13,7 @@
                                 height: 1px;
                                 background-color: black;
                             "
-                            class="my-3"
+                            class="my-lg-3"
                         ></div>
                     </div>
                 </div>
@@ -25,20 +25,22 @@
                     </div>
                 </div>
 
-                <div class="hover-container">
-                    <img
-                        class="steezy-image"
-                        src="{{ project.better_featured_image.source_url }}"
-                    />
-                    <div class="proj-container">
-                        <div class="proj-inner">
-                            <h2>{{ project.acf.projectDescription }}</h2>
-                            <span class="proj-subtext">{{
-                                project.acf.projectTypeOfWork
-                            }}</span>
-                            <span class="proj-button">{{
-                                project.title.rendered
-                            }}</span>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="hover-container">
+                            <img
+                                class="steezy-image"
+                                src="{{
+                                    project.better_featured_image.source_url
+                                }}"
+                            />
+                            <div class="proj-container">
+                                <div class="proj-inner">
+                                    <span class="proj-button">{{
+                                        project.title.rendered
+                                    }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <div class="container" *ngIf="project$ | async as project">
-    <div class="row my-5">
-        <div class="col-sm-12 text-center">
+    <div id="project-item-header" class="row">
+        <div class="col-lg-7 col-12 my-auto">
             <h1>
                 {{ project.title.rendered }}
             </h1>
@@ -13,22 +13,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 mb-5 mx-auto">
+        <div class="col-sm-12 mb-5 mx-auto">
             <div class="project-divider"></div>
         </div>
     </div>
-    <div class="row mb-5">
-        <div class="col-sm-12">
+
+    <div class="row overview">
+        <div class="col-sm-6 order-2 order-lg-1">
+            <p [innerHtml]="project.content.rendered"></p>
+        </div>
+        <div class="col-sm-6 order-1 order-lg-2 mb-lg-0 mb-5">
             <img
                 src="{{ project.better_featured_image.source_url }}"
                 alt="{{ project.title.rendered }}"
                 class="img-responsive"
             />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="overview" [innerHtml]="project.content.rendered"></div>
         </div>
     </div>
     <div class="row py-5" *ngIf="project.acf.sliderLinks">

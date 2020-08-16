@@ -63,15 +63,22 @@
         color: white;
     }
 }
+
+// Media Queries for Responsiveness
+
 @media (max-width: 758px) {
     .homepage-slider {
         height: inherit;
-
+        #hero {
+            padding-top: 20px;
+        }
         h1 {
-            font-size: 1.5rem;
-            text-align: center;
+            font-size: 3.2rem;
+            line-height: 3rem;
+            letter-spacing: 2px;
         }
         h2 {
+            margin-top: 10px;
             font-size: 1.1rem;
         }
         .container-fluid {

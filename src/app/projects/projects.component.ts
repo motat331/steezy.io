@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class ProjectsComponent implements OnInit {
     sliceAmount: number;
     projects$: any;
-
+    headerStyle = 'sub-page';
     constructor(
         private paramsService: ParamsService,
         private projectService: ProjectService
@@ -24,6 +24,5 @@ export class ProjectsComponent implements OnInit {
             (sliceAmount) => (this.sliceAmount = sliceAmount)
         );
         this.paramsService.changeSliceAmount(10);
-        // this.projects = this.projectService.projects;
     }
 }

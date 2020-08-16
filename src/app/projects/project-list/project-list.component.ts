@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjectService } from '../shared/project.service';
 import { Project } from '../shared/project.model';
-import { ParamsService } from '../shared/params.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-project-list',
@@ -11,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
     @Input() projects$: Project;
+    sliceAmount = 9;
 
     constructor() {}
 

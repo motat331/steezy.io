@@ -65,7 +65,8 @@ export class ProjectItemComponent implements OnInit, AfterViewInit {
                     new Acf(
                         item.acf.projectDescription,
                         item.acf.projectTypeOfWork,
-                        item.acf.sliderLinks.split(',')
+                        item.acf.sliderLinks.split(','),
+                        item.acf.featured
                     )
                 );
             });

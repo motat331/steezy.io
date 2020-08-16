@@ -76,11 +76,18 @@ section#latest-projects {
         font-weight: 300;
     }
 }
+
+// Media Queries for Responsiveness
+
 @media (max-width: 758px) {
-    section#latest-projects .sideways-rectangle {
-        width: 100%;
+    section#services-offered {
+        h3 {
+            margin-bottom: 20px;
+        }
     }
-    #work-statement {
-        font-size: 1.3rem;
+    section#latest-projects {
+        h2 {
+            font-size: 3rem;
+        }
     }
 }
