@@ -25,6 +25,8 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(appRoutes, {
+            useHash: false,
+            anchorScrolling: 'enabled',
             preloadingStrategy: PreloadAllModules,
             scrollPositionRestoration: 'enabled',
             initialNavigation: 'enabled',

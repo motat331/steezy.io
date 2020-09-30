@@ -22,7 +22,11 @@ export class AppComponent {
     }
 
     isHomeRoute() {
-        return this.router.url === '/';
+        if (this.router.url == '/' || this.router.url == '/#contactForm') {
+            return true;
+        }
+        return false;
+        // return this.router.url === '/';
     }
 
     routerEvents() {
