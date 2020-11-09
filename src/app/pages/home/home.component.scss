@@ -1,3 +1,6 @@
+#mobileIntroduction {
+    display: none;
+}
 section#waveContainer {
     section#services-offered {
         h5 {
@@ -82,6 +85,12 @@ section#waveContainer {
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {
+    #mobileIntroduction {
+        display: flex;
+    }
+    #desktopIntroduction {
+        display: none;
+    }
     section#waveContainer {
         margin-top: 300px;
         svg {
@@ -91,6 +100,16 @@ section#waveContainer {
             background-color: white;
         }
         section#services-offered {
+            .cta-image {
+                width: 300px;
+            }
+            h5 {
+                font-size: 1.1rem;
+                color: rgb(1, 112, 16);
+            }
+            h4 {
+                font-size: 1.4rem;
+            }
             h3 {
                 margin-bottom: 20px;
             }
