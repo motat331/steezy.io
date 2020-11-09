@@ -13,12 +13,14 @@ import {
 })
 export class AppComponent {
     title = 'steezysite2';
+    headerStyle;
     isLoaded: boolean;
 
     constructor(private router: Router) {}
 
     ngOnInit() {
         this.routerEvents();
+        this.headerStyle = 'abstract-background';
     }
 
     isHomeRoute() {

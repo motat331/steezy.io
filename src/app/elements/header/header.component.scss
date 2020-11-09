@@ -4,8 +4,6 @@ header#thin-header {
 }
 
 header#main-header {
-    background-color: rgba(33, 33, 37, 0.3);
-    background-image: url("/assets/images/abstract-bg.jpg");
     background-size: cover;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     #header-logo-container {
@@ -22,6 +20,10 @@ header#main-header {
             font-family: "Poppins", sans-serif;
         }
     }
+}
+.abstract-background {
+    background-color: rgba(33, 33, 37, 0.3);
+    background-image: url("/assets/images/abstract-bg.jpg");
 }
 
 #get-started {
@@ -59,6 +61,13 @@ header#main-header {
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {
+    #navbarNav {
+        .navbar-nav {
+            padding-bottom: 50px;
+            border-bottom: 5px solid black;
+            margin-bottom: 20px;
+        }
+    }
     .navbar {
         padding: 0px;
     }

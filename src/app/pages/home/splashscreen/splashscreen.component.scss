@@ -69,17 +69,31 @@
 @media (max-width: 758px) {
     .homepage-slider {
         height: inherit;
+        position: fixed;
+        margin-top: -400px;
+        padding-top: 100px;
+        z-index: -1;
+
+        svg {
+            display: none;
+        }
+
         #hero {
             padding-top: 20px;
+            padding-bottom: 70px;
         }
         h1 {
-            font-size: 3.2rem;
+            font-size: 2rem;
             line-height: 3rem;
             letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0px;
         }
         h2 {
-            margin-top: 10px;
+            margin-top: 0px;
+            padding-top: 0px;
             font-size: 1.1rem;
+            text-align: center;
         }
         .container-fluid {
             padding-bottom: 0px;

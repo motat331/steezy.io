@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 @Component({
     selector: 'app-header',
@@ -7,6 +7,8 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
     faChevronRight = faChevronRight;
+    @Input() headerStyle: any;
+
     constructor() {}
 
     ngOnInit(): void {}
