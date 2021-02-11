@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:heroku": "node dist/server",
+        "start:heroku": "node dist/steezysite3/server/main.js",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
