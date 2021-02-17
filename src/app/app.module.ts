@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, APP_INITIALIZER, PLATFORM_ID } from '@angular/core';
+import { BrowserModule, ɵgetDOM } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { ContactFormComponent } from './elements/contact-form/contact-form.compo
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
         ProjectsComponent,
     ],
     imports: [
-        BrowserModule.withServerTransition({ appId: 'serverApp' }),
+        BrowserModule.withServerTransition({ appId: 'steezysite3' }),
         FontAwesomeModule,
         AppRoutingModule,
         HttpClientModule,
@@ -39,7 +40,39 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
         SlickCarouselModule,
         TransferHttpCacheModule,
     ],
-    providers: [],
+    providers: [
+        {
+            provide: APP_INITIALIZER,
+            useFactory: function (
+                document: HTMLDocument,
+                platformId: Object
+            ): Function {
+                return () => {
+                    if (isPlatformBrowser(platformId)) {
+                        const dom = ɵgetDOM();
+                        const styles = Array.prototype.slice.apply(
+                            dom
+                                .getDefaultDocument()
+                                .querySelectorAll(`style[ng-transition]`)
+                        );
+                        styles.forEach((el) => {
+                            // Remove ng-transition attribute to prevent Angular appInitializerFactory
+                            // to remove server styles before preboot complete
+                            el.removeAttribute('ng-transition');
+                        });
+                        document.addEventListener('PrebootComplete', () => {
+                            // After preboot complete, remove the server scripts
+                            setTimeout(() =>
+                                styles.forEach((el) => dom.remove(el))
+                            );
+                        });
+                    }
+                };
+            },
+            deps: [DOCUMENT, PLATFORM_ID],
+            multi: true,
+        },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
