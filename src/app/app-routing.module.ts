@@ -23,7 +23,7 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes, {
             useHash: false,
             anchorScrolling: 'enabled',
-            preloadingStrategy: PreloadAllModules,
+            // preloadingStrategy: PreloadAllModules,
             scrollPositionRestoration: 'enabled',
             initialNavigation: 'enabled',
         }),
