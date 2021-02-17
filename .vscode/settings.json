@@ -16,7 +16,7 @@
         "tsconfig.spec.json": true,
         "tslint.json": true,
         "src\\environments": true,
-        "src\\favicon.ico": true,
+        // "src\\favicon.png": true,
         "src\\main.ts": true,
         "src\\polyfills.ts": true,
         "src\\test.ts": true

@@ -2,16 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ProjectListComponent } from './projects/project-list/project-list.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     {
         path: 'projects',
         component: ProjectsComponent,
-        // resolve: [ProjectsResolverService],
-        // resolve: { projects: ProjectsResolverService },
-        // children: [{ path: '', component: ProjectListComponent }],
     },
     {
         path: 'projects/:slug',
