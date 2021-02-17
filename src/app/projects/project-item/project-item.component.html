@@ -30,21 +30,4 @@
             />
         </div>
     </div>
-    <div class="row py-5" *ngIf="project.acf.sliderLinks">
-        <div class="col-sm-4 mx-auto">
-            <ngx-slick-carousel
-                class="carousel"
-                #slickModal="slick-carousel"
-                [config]="slideConfig"
-            >
-                <div
-                    ngxSlickItem
-                    *ngFor="let sliderLink of project.acf.sliderLinks"
-                    class="slide"
-                >
-                    <img src="{{ sliderLink }}" alt="" width="100%" />
-                </div>
-            </ngx-slick-carousel>
-        </div>
-    </div>
 </div>
