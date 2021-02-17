@@ -11,7 +11,6 @@ import { SplashscreenComponent } from './pages/home/splashscreen/splashscreen.co
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GetstartedComponent } from './pages/home/getstarted/getstarted.component';
 import { FooterComponent } from './elements/footer/footer.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ContactFormComponent } from './elements/contact-form/contact-form.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -37,7 +36,6 @@ import { isPlatformBrowser, DOCUMENT } from '@angular/common';
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        SlickCarouselModule,
         TransferHttpCacheModule,
     ],
     providers: [

@@ -25,14 +25,14 @@ export class AppComponent {
             console.log('set');
             this.headerStyle = 'abstract-background';
         }, 3000);
-        this.router.events
-            .pipe(
-                filter((event) => event instanceof NavigationEnd),
-                first()
-            )
-            .subscribe(() => {
-                document.getElementById('loader').classList.add('hidden');
-            });
+        // this.router.events
+        //     .pipe(
+        //         filter((event) => event instanceof NavigationEnd),
+        //         first()
+        //     )
+        //     .subscribe(() => {
+        //         document.getElementById('loader').classList.add('hidden');
+        //     });
     }
 
     isHomeRoute() {
