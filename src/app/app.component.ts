@@ -20,7 +20,10 @@ export class AppComponent {
 
     ngOnInit() {
         this.routerEvents();
-        this.headerStyle = 'abstract-background';
+        setTimeout(function () {
+            console.log('set');
+            this.headerStyle = 'abstract-background';
+        }, 3000);
     }
 
     isHomeRoute() {
