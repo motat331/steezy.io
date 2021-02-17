@@ -50,7 +50,7 @@ import { isPlatformBrowser, ɵgetDOM, DOCUMENT } from '@angular/common';
                 return () => {
                     if (isPlatformBrowser(platformId)) {
                         const dom = ɵgetDOM();
-                        const styles: any[] = Array.prototype.slice.apply(
+                        const styles = Array.prototype.slice.apply(
                             dom
                                 .getDefaultDocument()
                                 .querySelectorAll(`style[ng-transition]`)
@@ -61,7 +61,7 @@ import { isPlatformBrowser, ɵgetDOM, DOCUMENT } from '@angular/common';
                             el.removeAttribute('ng-transition');
                         });
                         document.addEventListener('PrebootComplete', () => {
-                            // After preboot complete, remove the server scripts
+                            console.log('PreBooted');
                             setTimeout(() =>
                                 styles.forEach((el) => dom.remove(el))
                             );
