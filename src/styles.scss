@@ -7,10 +7,20 @@ span {
 }
 
 fa-icon svg {
-  display: inline-block;
-  font-size: inherit;
-  height: 1em;
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
 }
-fa-icon .fa-2x{
-  height: 2em;
+fa-icon .fa-2x {
+    height: 2em;
+}
+#loader {
+    width: calc(100vw);
+    height: calc(100vh);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
 }
