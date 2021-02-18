@@ -5,7 +5,6 @@ import {
     NavigationStart,
     NavigationEnd,
 } from '@angular/router';
-import { filter, first } from 'rxjs/operators';
 
 @Component({
     selector: 'app-root',
@@ -21,18 +20,8 @@ export class AppComponent {
 
     ngOnInit() {
         this.routerEvents();
-        setTimeout(function () {
-            console.log('set');
-            this.headerStyle = 'abstract-background';
-        }, 3000);
-        // this.router.events
-        //     .pipe(
-        //         filter((event) => event instanceof NavigationEnd),
-        //         first()
-        //     )
-        //     .subscribe(() => {
-        //         document.getElementById('loader').classList.add('hidden');
-        //     });
+
+        this.headerStyle = 'abstract-background';
     }
 
     isHomeRoute() {
