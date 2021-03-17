@@ -25,6 +25,4 @@ export class ProjectsComponent implements OnInit {
         );
         this.paramsService.changeSliceAmount(10);
     }
-
-    big(self) {}
 }
