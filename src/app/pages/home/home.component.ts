@@ -14,15 +14,12 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private paramsService: ParamsService,
-        private projectService: ProjectService
+        public projectService: ProjectService
     ) {}
 
     ngOnInit() {
-        this.projects$ = this.projectService.allProjects.pipe(
-            map((projects) =>
-                projects.filter((project) => project.acf.featured == true)
-            )
-        );
+        if (!this.projectService.allProjects)
+            this.projectService.fetchProjects().subscribe();
 
         this.paramsService.currentMessage.subscribe(
             (sliceAmount) => (this.sliceAmount = sliceAmount)

@@ -14,11 +14,12 @@ export class ProjectsComponent implements OnInit {
     headerStyle = 'sub-page';
     constructor(
         private paramsService: ParamsService,
-        private projectService: ProjectService
+        public projectService: ProjectService
     ) {}
 
     ngOnInit(): void {
-        this.projects$ = this.projectService.allProjects;
+        if (!this.projectService.allProjects)
+            this.projectService.fetchProjects().subscribe();
 
         this.paramsService.currentMessage.subscribe(
             (sliceAmount) => (this.sliceAmount = sliceAmount)

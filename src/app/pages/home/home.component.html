@@ -91,7 +91,9 @@
                 </div>
             </div>
 
-            <app-project-list [projects$]="projects$"></app-project-list>
+            <app-project-list
+                [projects$]="this.projectService.allProjects"
+            ></app-project-list>
         </section>
     </div>
 </section>

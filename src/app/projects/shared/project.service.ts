@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { map, shareReplay, tap, filter, first } from 'rxjs/operators';
-import { Project, Acf } from './project.model';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { Project } from './project.model';
 
 @Injectable({
     providedIn: 'root',
@@ -10,7 +10,7 @@ import { Project, Acf } from './project.model';
 export class ProjectService {
     projectsScope = '5';
     projects = [];
-    cache$: Observable<Project[]>;
+    allProjects;
 
     constructor(private http: HttpClient) {}
 
@@ -20,42 +20,40 @@ export class ProjectService {
         );
     }
 
-    get singleProject() {
-        if (!this.cache$) {
-            this.cache$ = this.fetchProjects().pipe(shareReplay(1));
-        }
-        return this.cache$;
-    }
-
-    get allProjects() {
-        if (!this.cache$) {
-            this.cache$ = this.fetchProjects().pipe(shareReplay(1));
-        }
-        return this.cache$;
-    }
-
     fetchProjects() {
         return this.http
-            .get<Project[]>(
+            .get<any[]>(
                 'https://admin.steezy.io/wp-json/wp/v2/posts?categories=5'
             )
             .pipe(
-                map((projects) => {
-                    return projects.map((item) => {
-                        return new Project(
-                            item.id,
-                            item.slug,
-                            item.title,
-                            item.content,
-                            item.better_featured_image,
-                            new Acf(
-                                item.acf.projectDescription,
-                                item.acf.projectTypeOfWork,
-                                item.acf.sliderLinks,
-                                item.acf.featured
-                            )
-                        );
+                map((projects: any) => {
+                    const newProjects = projects.map((item: any) => {
+                        let project: Project;
+                        project = {
+                            id: item.id,
+                            slug: item.slug,
+                            title: item.title,
+                            content: item.content,
+                            better_featured_image: item.better_featured_image,
+                            projectDescription: item.acf.projectDescription,
+                            projectTypeOfWork: item.acf.projectTypeOfWork,
+                            sliderLinks: item.acf.sliderLinks,
+                            featured: item.acf.featured,
+                            col_1_title: item.acf.col_1_title,
+                            col_1_text: item.acf.col_1_text,
+                            col_1_image: item.acf.col_1_image,
+                            col_2_title: item.acf.col_2_title,
+                            col_2_text: item.acf.col_2_text,
+                            col_2_image: item.acf.col_2_image,
+                            col_3_title: item.acf.col_3_title,
+                            col_3_text: item.acf.col_3_text,
+                            col_3_image: item.acf.col_3_image,
+                        };
+
+                        return project;
                     });
+                    this.allProjects = newProjects;
+                    return this.allProjects;
                 })
             );
     }
