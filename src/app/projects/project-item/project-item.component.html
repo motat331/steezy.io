@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="row overview first-row mb-5" *ngIf="!project$?.col_3_image">
+    <div class="row overview first-row mb-5" *ngIf="!project$?.col_1_image">
         <div class="col-sm-6 order-2 order-lg-1 vertical-align">
             <p [innerHtml]="project$?.content.rendered"></p>
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row overview first-row" *ngIf="project$?.col_3_image">
+    <div class="row overview first-row" *ngIf="project$?.col_1_image">
         <div class="col-sm-6 order-2 order-lg-1 vertical-align">
             <h2 class="title" [innerHtml]="project$?.col_1_title"></h2>
             <p [innerHtml]="project$?.col_1_text"></p>
@@ -44,7 +44,7 @@
             />
         </div>
     </div>
-    <div class="row overview my-5 second-row" *ngIf="project$?.col_3_image">
+    <div class="row overview my-5 second-row" *ngIf="project$?.col_2_image">
         <div class="col-sm-6 order-2 order-lg-2 vertical-align">
             <h2 class="title" [innerHtml]="project$?.col_2_title"></h2>
             <p [innerHtml]="project$?.col_2_text"></p>
