@@ -5,6 +5,8 @@ import {
     NavigationStart,
     NavigationEnd,
 } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from './projects/shared/canonical.service';
 
 @Component({
     selector: 'app-root',
@@ -16,12 +18,33 @@ export class AppComponent {
     headerStyle;
     isLoaded: boolean;
 
-    constructor(private router: Router) {}
+    constructor(
+        private router: Router,
+        private metaTagService: Meta,
+        private titleService: Title,
+        private canonicalService: CanonicalService
+    ) {}
 
     ngOnInit() {
         this.routerEvents();
 
         this.headerStyle = 'abstract-background';
+        this.canonicalService.setCanonicalURL();
+        this.metaTagService.addTags([
+            {
+                name: 'keywords',
+                content:
+                    'Angular SEO Integration, Music CRUD, Angular Universal',
+            },
+            { name: 'robots', content: 'index, follow' },
+            { name: 'author', content: 'Digamber Singh' },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1',
+            },
+            { name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD' },
+            { charset: 'UTF-8' },
+        ]);
     }
 
     isHomeRoute() {
