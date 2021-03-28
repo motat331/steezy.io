@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../shared/project.service';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { UtilService } from '../shared/util.service';
 
 @Component({
     selector: 'app-project-item',
@@ -9,13 +9,20 @@ import { map } from 'rxjs/operators';
     styleUrls: ['./project-item.component.scss'],
 })
 export class ProjectItemComponent implements OnInit {
-    project: any;
     project$: any;
-    cache$: any;
+    slideConfig = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        cssEase: 'linear',
+    };
 
     constructor(
         public projectService: ProjectService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private util: UtilService
     ) {}
 
     ngOnInit(): void {
@@ -25,22 +32,24 @@ export class ProjectItemComponent implements OnInit {
             this.project$ = this.projectService.allProjects.find(
                 (project: any) => project.slug == slug
             );
+            this.util.setPageTitleAndMeta(
+                this.project$.title.rendered,
+                'A portfolio page for ' +
+                    this.project$.title.rendered +
+                    ' which shows how we helped the client with their online presence.'
+            );
         } else {
             this.projectService.fetchProjects().subscribe((res) => {
                 this.project$ = this.projectService.allProjects.find(
                     (project: any) => project.slug == slug
                 );
-                console.log('All Projects Res -> ', this.project$);
+                this.util.setPageTitleAndMeta(
+                    this.project$.title.rendered,
+                    'A portfolio page for ' +
+                        this.project$.title.rendered +
+                        ' which shows how we helped the client with their online presence.'
+                );
             });
         }
     }
-
-    slideConfig = {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        cssEase: 'linear',
-    };
 }

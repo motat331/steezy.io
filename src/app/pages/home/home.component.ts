@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParamsService } from '../../projects/shared/params.service';
 import { ProjectService } from 'src/app/projects/shared/project.service';
-import { map } from 'rxjs/operators';
-import { Title, Meta } from '@angular/platform-browser';
+import { UtilService } from 'src/app/projects/shared/util.service';
 
 @Component({
     selector: 'app-home',
@@ -16,8 +15,7 @@ export class HomeComponent implements OnInit {
     constructor(
         private paramsService: ParamsService,
         public projectService: ProjectService,
-        private metaTagService: Meta,
-        private titleService: Title
+        private util: UtilService
     ) {}
 
     ngOnInit() {
@@ -28,11 +26,9 @@ export class HomeComponent implements OnInit {
             (sliceAmount) => (this.sliceAmount = sliceAmount)
         );
         this.paramsService.changeSliceAmount(3);
-
-        this.titleService.setTitle('Title');
-        this.metaTagService.updateTag({
-            name: 'description',
-            content: 'Add song template',
-        });
+        this.util.setPageTitleAndMeta(
+            'A web agency for people and brands',
+            'Home page of Steezysite - a online presence agency helping people and brands develop and build out their websites and web applications.'
+        );
     }
 }

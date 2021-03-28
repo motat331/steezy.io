@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from './shared/project.service';
 import { ParamsService } from './shared/params.service';
-import { map } from 'rxjs/operators';
+import { UtilService } from './shared/util.service';
 
 @Component({
     selector: 'app-project',
@@ -14,7 +14,8 @@ export class ProjectsComponent implements OnInit {
     headerStyle = 'sub-page';
     constructor(
         private paramsService: ParamsService,
-        public projectService: ProjectService
+        public projectService: ProjectService,
+        private util: UtilService
     ) {}
 
     ngOnInit(): void {
@@ -25,5 +26,10 @@ export class ProjectsComponent implements OnInit {
             (sliceAmount) => (this.sliceAmount = sliceAmount)
         );
         this.paramsService.changeSliceAmount(10);
+
+        this.util.setPageTitleAndMeta(
+            'our projects',
+            'A listing page which shows Steezysites past projects'
+        );
     }
 }
