@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../shared/project.model';
+import { ParamsService } from '../shared/params.service';
 
 @Component({
     selector: 'app-project-list',
@@ -10,7 +11,7 @@ export class ProjectListComponent implements OnInit {
     @Input() projects$: Project;
     sliceAmount = 9;
 
-    constructor() {}
+    constructor(public paramService: ParamsService) {}
 
     ngOnInit(): void {}
 }

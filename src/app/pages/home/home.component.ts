@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     projects$: any;
 
     constructor(
-        private paramsService: ParamsService,
+        public paramsService: ParamsService,
         public projectService: ProjectService,
         private util: UtilService
     ) {}
@@ -21,11 +21,8 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         if (!this.projectService.allProjects)
             this.projectService.fetchProjects().subscribe();
-
-        this.paramsService.currentMessage.subscribe(
-            (sliceAmount) => (this.sliceAmount = sliceAmount)
-        );
-        this.paramsService.changeSliceAmount(3);
+        // this.paramsService.changeSliceAmount(3);
+        this.paramsService.sliceAmount = 3;
         this.util.setPageTitleAndMeta(
             'A web agency for people and brands',
             'Home page of Steezysite - a online presence agency helping people and brands develop and build out their websites and web applications.'

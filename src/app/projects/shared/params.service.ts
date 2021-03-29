@@ -1,16 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ParamsService {
-    private projectDisplayScopeSource = new BehaviorSubject(4);
-    currentMessage = this.projectDisplayScopeSource.asObservable();
+    sliceAmount: number = 9;
 
     constructor() {}
-
-    changeSliceAmount(projectDisplayScope: number) {
-        this.projectDisplayScopeSource.next(projectDisplayScope);
-    }
 }

@@ -22,10 +22,7 @@ export class ProjectsComponent implements OnInit {
         if (!this.projectService.allProjects)
             this.projectService.fetchProjects().subscribe();
 
-        this.paramsService.currentMessage.subscribe(
-            (sliceAmount) => (this.sliceAmount = sliceAmount)
-        );
-        this.paramsService.changeSliceAmount(10);
+        this.paramsService.sliceAmount = 9;
 
         this.util.setPageTitleAndMeta(
             'our projects',
