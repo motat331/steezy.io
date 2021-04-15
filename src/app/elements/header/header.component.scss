@@ -1,6 +1,10 @@
 header#thin-header {
     background-color: rgba(19, 19, 20, 0.2);
-    color: white;
+    color: black;
+}
+.navbar {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 header#main-header {
@@ -16,8 +20,9 @@ header#main-header {
 
     li {
         a {
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-family: "Poppins", sans-serif;
+            padding: 0 1.2rem;
         }
     }
 }
@@ -32,15 +37,12 @@ header#main-header {
     }
 
     span {
-        font-family: Poppins;
-        font-weight: 500;
-        font-size: 1.3rem;
+        font-size: 1rem;
         color: white;
         border-radius: 6px;
-        padding: 3px 10px;
+        padding: 8px 12px;
         transition: background-color 0.5s;
-        background-color: rgba(41, 53, 143, 1);
-        border: 4px solid #1b1f42;
+        background-color: #622c7a;
         color: white;
         display: inline-block;
 

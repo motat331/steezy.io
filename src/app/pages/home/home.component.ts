@@ -10,7 +10,6 @@ import { UtilService } from 'src/app/projects/shared/util.service';
 })
 export class HomeComponent implements OnInit {
     sliceAmount: number;
-    projects$: any;
 
     constructor(
         public paramsService: ParamsService,

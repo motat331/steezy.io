@@ -5,7 +5,11 @@ p,
 span {
     font-family: "Poppins", sans-serif;
 }
-
+body,
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth !important;
+}
 fa-icon svg {
     display: inline-block;
     font-size: inherit;
@@ -14,13 +18,26 @@ fa-icon svg {
 fa-icon .fa-2x {
     height: 2em;
 }
-#loader {
-    width: calc(100vw);
-    height: calc(100vh);
+.custom-button {
+    display: inline-block;
+    background-color: #622c7a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    &.btn-center {
+        margin: 0 auto;
+    }
+}
+
+.vertical-align {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
+    align-items: center;
+}
+
+.btn-custom-color {
+    background-color: #622c7a;
+    color: white;
 }

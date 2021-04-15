@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './elements/header/header.component';
 import { PagesComponent } from './pages/pages.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SplashscreenComponent } from './pages/home/splashscreen/splashscreen.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GetstartedComponent } from './pages/home/getstarted/getstarted.component';
 import { FooterComponent } from './elements/footer/footer.component';
@@ -24,7 +23,6 @@ import { ProjectsComponent } from './projects/projects.component';
         GetstartedComponent,
         FooterComponent,
         ContactFormComponent,
-        SplashscreenComponent,
         ProjectListComponent,
         ProjectsComponent,
     ],

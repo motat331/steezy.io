@@ -1,7 +1,97 @@
+$background-tint: #f4edf6;
 #mobileIntroduction {
     display: none;
 }
-section#waveContainer {
+section#hero {
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    h1 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}
+section#whatWeDo {
+    background-color: $background-tint;
+    padding: 0px 0px 0px 0px;
+    p {
+        color: rgb(65, 65, 65);
+    }
+    #serviceCards {
+        display: flex;
+        justify-content: space-around;
+        width: 450px;
+        margin: 0 auto;
+        .service-card {
+            .card-image {
+                background-color: white;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+
+                img {
+                    width: 50px;
+                }
+            }
+            p {
+                color: #222222;
+                font-weight: bold;
+            }
+        }
+    }
+}
+#caseStudy {
+    #caseDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+#feedbackFromClients {
+    background-color: $background-tint;
+    .review {
+        .review-title {
+            text-align: center;
+            img {
+                height: 70px;
+            }
+        }
+        .review-text {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            .triangle {
+                position: absolute;
+                bottom: -20px;
+                right: 50%;
+                transform: translate(50%, 0);
+                background-color: transparent;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid white;
+            }
+        }
+        .review-author {
+            text-align: center;
+            .photo {
+                img {
+                    width: 70px;
+                }
+            }
+        }
+    }
+}
+#homePage {
     section#services-offered {
         h5 {
             letter-spacing: 4px;
@@ -79,6 +169,58 @@ section#waveContainer {
             line-height: 1.8;
             font-weight: 300;
         }
+    }
+}
+section#contactForm {
+    background-color: $background-tint;
+    // padding: 40px 0px;
+    p {
+        color: rgb(65, 65, 65);
+    }
+    h4 {
+        color: black;
+        font-weight: 500;
+    }
+    h5 {
+        color: black;
+        font-weight: 500;
+    }
+    .email-us {
+        h6 {
+            font-weight: bold;
+        }
+    }
+    .hover-underline-efx {
+        padding: 0 0 10px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+    }
+    .hover-underline-efx::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #622c7a;
+        content: "";
+        opacity: 0;
+        -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+        -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+        transition: height 0.3s, opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    .hover-underline-efx:hover::after,
+    .hover-underline-efx:focus::after {
+        height: 5px;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 

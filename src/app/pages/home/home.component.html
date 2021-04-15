@@ -1,123 +1,252 @@
-<app-splashscreen></app-splashscreen>
-<section id="waveContainer">
+<app-header></app-header>
+<div class="container">
+    <section id="hero">
+        <div class="row">
+            <div class="col-12 my-5 text-center">
+                <h1>Build Clean Apps</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mx-auto text-center">
+                <h3>We build simple and powerful web and mobile apps.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-5 text-center">
+                <div class="custom-button btn-center">View Latest Work</div>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="wave">
     <svg
         id="Layer_1"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 614 60.38"
+        viewBox="0 0 614 14.38"
     >
         <title>WaveThin</title>
         <path
             d="M614,30.37q-14.34-.82-28.68-1.63c-11.55-.64-23.08-1.52-34.66-1.8-22.6-.54-45.25-1.14-67.85-1-30.08.25-60.17,1-90.2,2-27.17.86-54.28,2.27-81.41,3.46-22.17,1-44.31,2.08-66.49,3-19.88.8-39.77,1.64-59.68,2-29.77.53-59.61,1.28-89.34.78C67,36.7,38.48,34.78,9.88,33.47c-3.3-.15-6.59-.39-9.88-.58V8.2c9.56.54,19.11,1.11,28.68,1.62,11.88.65,23.74,1.54,35.66,1.82,22.6.54,45.24,1,67.85.95,25.1-.11,50.21-.72,75.28-1.48,24.36-.74,48.68-1.88,73-3C307.76,6.91,335,5.47,362.3,4.28c16.22-.71,32.51-1,48.74-1.68,35.55-1.43,71.19-2,106.77-1.26,28.82.63,57.54,2.45,86.31,3.75,3.3.15,6.59.39,9.88.59Z"
-            style="fill: #fff"
+            style="fill: #f4edf6"
         />
     </svg>
-    <div id="whiteBGContainer">
-        <section id="services-offered">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-sm-12 mx-auto">
-                        <div id="mobileIntroduction" class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-6 mx-auto text-center">
-                                        <img
-                                            class="cta-image"
-                                            src="assets/images/services_websites.png"
-                                            class="img-fluid"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mt-5 text-center">
-                                        <h5>SERVICES</h5>
-
-                                        <h3>We develop your online presence</h3>
-                                        <div
-                                            style="
-                                                width: 100%;
-                                                height: 5px;
-                                                background-color: lightblue;
-                                            "
-                                        ></div>
-
-                                        <h4 class="my-4">
-                                            Using state of the art technology.
-                                            Our websites are fully responsive
-                                            and lightning fast
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="desktopIntroduction" class="row">
-                            <div class="col-lg-4 my-auto">
-                                <img
-                                    src="assets/images/services_websites.png"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="col-sm-1 my-lg-0 my-4"></div>
-                            <div class="col-sm-7 my-auto">
-                                <h5>SERVICES</h5>
-                                <h3>We develop your online presence.</h3>
-                                <div
-                                    style="
-                                        width: 100%;
-                                        height: 5px;
-                                        background-color: lightblue;
-                                    "
-                                ></div>
-
-                                <h4 class="my-4">
-                                    Using state of the art technology, our
-                                    websites are fully responsive and lightning
-                                    fast.
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="latest-projects" class="mt-lg-5">
-            <div class="container py-lg-5">
-                <div class="row">
-                    <div class="col-sm-12 mb-3 text-left">
-                        <h2>Our projects.</h2>
-                    </div>
-                </div>
-            </div>
-
-            <app-project-list
-                [projects$]="this.projectService.allProjects"
-            ></app-project-list>
-        </section>
-    </div>
-</section>
-
-<!-- <section id="contactForm" class="py-5">
-    <div class="container">
+</div>
+<section id="whatWeDo">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-lg-12">
-                <h3>Let's Connect</h3>
+            <div class="col-12 text-center">
+                <h2>What We Do</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 order-sm-2">
-                <p>
-                    Are you looking to discuss a new project or do you have an
-                    idea for a new collaboration?
-                </p>
-                <p>
-                    Email us connect@steezy.io
-                </p>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div id="serviceCards">
+                    <div class="service-card text-center">
+                        <div class="card-image mb-3">
+                            <img
+                                src="assets/images/icons8-app-store.svg"
+                                alt=""
+                            />
+                        </div>
+                        <p>Web<br />Applications</p>
+                    </div>
+                    <div class="service-card text-center">
+                        <div class="card-image mb-3">
+                            <img
+                                src="assets/images/icons8-app-store.svg"
+                                alt=""
+                            />
+                        </div>
+                        <p>iOS<br />Applications</p>
+                    </div>
+                    <div class="service-card text-center">
+                        <div class="card-image mb-3">
+                            <img
+                                src="assets/images/icons8-google-play.svg"
+                                alt=""
+                            />
+                        </div>
+
+                        <p>Android<br />Applications</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5 order-sm-1">
+        </div>
+        <div class="row col-8 mx-auto mt-4 text-center">
+            <p>
+                We build affordable technology solutions for businesses, large &
+                small. By applying modern design priciples along with the latest
+                in mobile & web technologies, we create tailored solutions that
+                add value by connecting people with each other, businesses with
+                their customers, and decision makers with valuable information,
+                while simplifying business processes, accelerating production
+                and lowering costs.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="caseStudy">
+    <div class="container py-5">
+        <div class="row my-5">
+            <div class="col-7">
+                <img
+                    class="img-fluid"
+                    src="assets/images/Laptop-SelfBalanceMassage.png"
+                    alt=""
+                />
+            </div>
+            <div id="caseDescription" class="col-5 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Self Balance Massage<br />Case Study</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <p>
+                            At Self Balance Massage, our number one priority is
+                            the health and safety of all the members of our
+                            community. We care about you and your individual
+                            needs as well.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="custom-button btn-center">
+                            View Case Study
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="feedbackFromClients">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>What our clients say</h2>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-4">
+                <div class="review">
+                    <div class="review-title my-3">
+                        <img
+                            src="assets/images/profile-pic/selfbalancemassage.png"
+                            alt=""
+                            class="img-fluid"
+                        />
+                    </div>
+                    <div class="review-text my-4">
+                        At Self Balance Massage, our number one priority is the
+                        health and safety of all the members of our community.
+                        We care about you and your individual needs as well.
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="review-author mt-5 mb-3">
+                        <div class="photo">
+                            <img
+                                src="assets/images/profile-pic/richelle-photo.png"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                        <div class="name mt-3">Richelle McMann,</div>
+                        <div class="occupation">
+                            Owner, Self Balance Massage
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="review">
+                    <div class="review-title my-3">
+                        <img
+                            src="assets/images/profile-pic/infiniteila.png"
+                            alt=""
+                            class="img-fluid"
+                        />
+                    </div>
+                    <div class="review-text my-4">
+                        At Self Balance Massage, our number one priority is the
+                        health and safety of all the members of our community.
+                        We care about you and your individual needs as well.
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="review-author mt-5 mb-3">
+                        <div class="photo">
+                            <img
+                                src="assets/images/profile-pic/farrah.png"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                        <div class="name mt-3">Farrah Wynne,</div>
+                        <div class="occupation">Founder, InfiniteILA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="review">
+                    <div class="review-title my-3">
+                        <img
+                            src="assets/images/profile-pic/chasefiedler.png"
+                            alt=""
+                            class="img-fluid"
+                        />
+                    </div>
+                    <div class="review-text my-4">
+                        At Self Balance Massage, our number one priority is the
+                        health and safety of all the members of our community.
+                        We care about you and your individual needs as well.
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="review-author mt-5 mb-3">
+                        <div class="photo">
+                            <img
+                                src="assets/images/profile-pic/farrah.png"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                        <div class="name mt-3">Chase Fiedler,</div>
+                        <div class="occupation">
+                            Founder, Chase Fiedler Tattoos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="idkYet">
+    <div class="container py-5"></div>
+</section>
+<section id="contactForm">
+    <div class="container py-5">
+        <div class="row my-5">
+            <div class="col-lg-4 text-center vertical-align">
+                <div class="my-auto">
+                    <h2>Talk to an Expert</h2>
+                    <p>Send us an email or fill out the form below.</p>
+                    <div class="email-us mt-5">
+                        <h6>Email Us</h6>
+                        <a
+                            href="mailto:hi@steezysite.com"
+                            class="hover-underline-efx"
+                            >hi@steezysite.com</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+
+            <div class="col-lg-7">
                 <app-contact-form></app-contact-form>
             </div>
         </div>
     </div>
-</section> -->
+</section>

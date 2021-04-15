@@ -25,6 +25,7 @@ const appRoutes: Routes = [
             anchorScrolling: 'enabled',
             preloadingStrategy: PreloadAllModules,
             scrollPositionRestoration: 'enabled',
+            scrollOffset: [0, 64],
             initialNavigation: 'enabledBlocking',
         }),
     ],
