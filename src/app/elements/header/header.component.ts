@@ -7,7 +7,6 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
     faChevronRight = faChevronRight;
-    @Input() headerStyle: any;
 
     constructor() {}
 

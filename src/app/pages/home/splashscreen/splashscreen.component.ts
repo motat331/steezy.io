@@ -14,7 +14,6 @@ export class SplashscreenComponent implements OnInit {
     faCheck = faCheck;
     faChevronRight = faChevronRight;
     faCheckCircle = faCheckCircle;
-    headerStyle = 'abstract-background';
 
     constructor() {}
 

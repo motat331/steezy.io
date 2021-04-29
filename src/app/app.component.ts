@@ -14,7 +14,6 @@ import { CanonicalService } from './projects/shared/canonical.service';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    headerStyle;
     isLoaded: boolean;
 
     constructor(
@@ -26,7 +25,6 @@ export class AppComponent {
     ngOnInit() {
         this.routerEvents();
 
-        this.headerStyle = 'abstract-background';
         this.canonicalService.setCanonicalURL();
         this.metaTagService.addTags([
             { name: 'robots', content: 'index, follow' },

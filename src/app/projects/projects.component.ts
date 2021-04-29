@@ -11,7 +11,6 @@ import { UtilService } from './shared/util.service';
 export class ProjectsComponent implements OnInit {
     sliceAmount: number;
     projects$: any;
-    headerStyle = 'sub-page';
     constructor(
         private paramsService: ParamsService,
         public projectService: ProjectService,

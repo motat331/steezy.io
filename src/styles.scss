@@ -1,3 +1,7 @@
+$background-tint: #f4edf6;
+.background {
+    background-color: #fbfbfb;
+}
 /* You can add global styles to this file, and also import other style files */
 html,
 body,
@@ -18,6 +22,7 @@ fa-icon svg {
 fa-icon .fa-2x {
     height: 2em;
 }
+
 .custom-button {
     display: inline-block;
     background-color: #622c7a;

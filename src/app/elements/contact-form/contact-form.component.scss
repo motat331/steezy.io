@@ -6,7 +6,7 @@ span {
     color: #6d6d6d;
 }
 form {
-    background-color: white;
+    background-color: #f4edf6;
     border-radius: 8px;
     padding: 40px;
 }
@@ -24,9 +24,10 @@ form {
     transform: translateY(-10px);
 }
 .form-control {
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(255, 255, 255);
     border-color: transparent;
     border: 2px solid transparent;
+    border-radius: 6px;
 }
 
 .show-block {
