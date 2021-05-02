@@ -43,6 +43,7 @@ export class ProjectItemComponent implements OnInit {
                 this.project$ = this.projectService.allProjects.find(
                     (project: any) => project.slug == slug
                 );
+                console.log('Project -> ', this.project$);
                 this.util.setPageTitleAndMeta(
                     this.project$.title.rendered,
                     'A portfolio page for ' +

@@ -48,6 +48,51 @@ export class ProjectService {
                             col_3_title: item.acf.col_3_title,
                             col_3_text: item.acf.col_3_text,
                             col_3_image: item.acf.col_3_image,
+                            hero: item.acf.hero_image
+                                ? item.acf.hero_image.url
+                                : '',
+                            intro: {
+                                left: item.acf.intro_left,
+                                right: item.acf.intro_right,
+                                tags: item.acf.intro_tags,
+                            },
+                            problem: {
+                                header: item.acf.problem_header,
+                                text: item.acf.problem_text
+                                    ? this.splitIntoParagraphs(
+                                          item.acf.problem_text
+                                      )
+                                    : '',
+                                image: item.acf.problem_image
+                                    ? item.acf.problem_image.url
+                                    : '',
+                                disclaimer: item.acf.problem_disclaimer,
+                            },
+                            newExperience: {
+                                row1: {
+                                    text: item.acf.row_1_text,
+                                    image: item.acf.row_1_image
+                                        ? item.acf.row_1_image.url
+                                        : '',
+                                },
+                                row2: {
+                                    text: item.acf.row_2_text,
+                                    image: item.acf.row_2_image
+                                        ? item.acf.row_2_image.url
+                                        : '',
+                                },
+                            },
+                            impact: {
+                                header: item.acf.impact_header,
+                                text: item.acf.impact_text
+                                    ? this.splitIntoParagraphs(
+                                          item.acf.impact_text
+                                      )
+                                    : '',
+                                image: item.acf.impact_image
+                                    ? item.acf.impact_image.url
+                                    : '',
+                            },
                         };
 
                         return project;
@@ -56,6 +101,10 @@ export class ProjectService {
                     return this.allProjects;
                 })
             );
+    }
+
+    splitIntoParagraphs(paragraph) {
+        return paragraph.split('[break]');
     }
 
     setProjects(projects: Project[]) {

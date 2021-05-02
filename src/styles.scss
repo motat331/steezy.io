@@ -22,7 +22,15 @@ fa-icon svg {
 fa-icon .fa-2x {
     height: 2em;
 }
-
+.container-small {
+    max-width: 940px;
+}
+.light-bg {
+    background-color: #fef8ff1e;
+}
+.light-grey-bg {
+    background-color: #fafafa;
+}
 .custom-button {
     display: inline-block;
     background-color: #622c7a;
@@ -36,6 +44,12 @@ fa-icon .fa-2x {
 }
 
 .vertical-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vertical-align-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
