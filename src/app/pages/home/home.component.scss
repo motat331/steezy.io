@@ -56,6 +56,9 @@ section#whatWeDo {
 }
 #feedbackFromClients {
     background-color: $background-tint;
+    .review-divider {
+        display: none;
+    }
     .review {
         .review-title {
             text-align: center;
@@ -88,86 +91,6 @@ section#whatWeDo {
                     width: 70px;
                 }
             }
-        }
-    }
-}
-#homePage {
-    section#services-offered {
-        h5 {
-            letter-spacing: 4px;
-            font-size: 1rem;
-        }
-        h4 {
-            letter-spacing: 1.5px;
-            line-height: 1.5;
-            font-weight: 400;
-            font-size: 1.5rem;
-        }
-        h3 {
-            letter-spacing: 2px;
-            font-size: 2rem;
-        }
-    }
-
-    section#latest-projects {
-        h5 {
-            letter-spacing: 4px;
-            font-size: 1rem;
-        }
-        h2 {
-            font-family: "Encode Sans Semi Expanded", sans-serif;
-            font-size: 6rem;
-            font-weight: 600;
-        }
-        h3 {
-            letter-spacing: 2px;
-            font-size: 2rem;
-        }
-        #work-statement {
-            font-weight: 300;
-            font-size: 1.3rem;
-        }
-        .project-seperator {
-            background-color: black;
-            width: 100%;
-            height: 1px;
-            background-color: #d3d3d3;
-            margin: 0 auto;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .sideways-rectangle {
-            width: 400px;
-            margin: 0 auto;
-        }
-
-        #viewMoreProjects {
-            font-size: 1.2rem;
-            color: #404040;
-            text-transform: uppercase;
-            font-family: "Poppins", sans-serif;
-            a {
-                color: #404040;
-            }
-        }
-    }
-
-    #contactForm {
-        background: rgba(228, 230, 231, 0.4);
-
-        h3 {
-            font-family: "Poppins", sans-serif;
-        }
-
-        p {
-            font-family: "Poppins", sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 1.1;
-            line-height: 1.8;
-            font-weight: 300;
         }
     }
 }
@@ -227,39 +150,26 @@ section#contactForm {
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {
-    #mobileIntroduction {
-        display: flex;
+    section#hero {
+        margin-bottom: 4rem;
+        h1 {
+            font-size: 2rem;
+        }
     }
-    #desktopIntroduction {
-        display: none;
-    }
-    section#waveContainer {
-        margin-top: 300px;
+    #wave {
         svg {
-            margin-bottom: -30px;
+            display: block;
         }
-        #whiteBGContainer {
-            background-color: white;
+    }
+    section#whatWeDo {
+        #serviceCards {
+            width: 100%;
         }
-        section#services-offered {
-            .cta-image {
-                width: 300px;
-            }
-            h5 {
-                font-size: 1.1rem;
-                color: rgb(1, 112, 16);
-            }
-            h4 {
-                font-size: 1.4rem;
-            }
-            h3 {
-                margin-bottom: 20px;
-            }
-        }
-        section#latest-projects {
-            h2 {
-                font-size: 3rem;
-            }
-        }
+    }
+    #caseDescription {
+        margin-top: 5rem;
+    }
+    .review-divider {
+        display: block !important;
     }
 }

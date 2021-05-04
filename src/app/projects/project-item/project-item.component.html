@@ -1,15 +1,15 @@
 <section id="hero">
-    <img [src]="project$?.hero" alt="" />
+    <img [src]="project$?.hero" class="img-fluid" alt="" />
 </section>
 <section id="introContainer" class="light-bg">
     <div class="container" *ngIf="project$">
         <div id="intro">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-sm-12">
                     <h1>{{ project$?.intro.left }}</h1>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-5 vertical-align">
+                <div class="col-lg-5 col-sm-12 mt-sm-4 vertical-align">
                     <h4>
                         {{ project$?.intro.right }}
                     </h4>

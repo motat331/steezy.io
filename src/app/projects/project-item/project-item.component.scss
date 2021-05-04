@@ -56,3 +56,14 @@ section#newExperienceMobile {
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
+
+@media (max-width: 758px) {
+    section#introContainer {
+        padding: 2rem 0rem;
+        #intro {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
