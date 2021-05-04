@@ -4,7 +4,6 @@ p {
     line-height: 30px;
 }
 section#introContainer {
-    padding: 8rem 0rem;
     div#intro {
         h1 {
             letter-spacing: 1px;
@@ -52,18 +51,30 @@ section#newExperienceMobile {
 .pt-10 {
     padding-top: 10rem;
 }
-.py-10 {
+.custom-padding-y-sm {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.custom-padding-y {
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
 
 @media (max-width: 758px) {
     section#introContainer {
-        padding: 2rem 0rem;
         #intro {
             h1 {
                 font-size: 2rem;
             }
         }
+    }
+    #wave {
+        svg {
+            display: block;
+        }
+    }
+    .custom-padding-y {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 }

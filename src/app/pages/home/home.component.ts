@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ParamsService } from '../../projects/shared/params.service';
 import { ProjectService } from 'src/app/projects/shared/project.service';
 import { UtilService } from 'src/app/projects/shared/util.service';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-home',
@@ -10,7 +11,7 @@ import { UtilService } from 'src/app/projects/shared/util.service';
 })
 export class HomeComponent implements OnInit {
     sliceAmount: number;
-
+    faLongArrowAltRight = faLongArrowAltRight;
     constructor(
         public paramsService: ParamsService,
         public projectService: ProjectService,

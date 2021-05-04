@@ -95,21 +95,25 @@ section#whatWeDo {
     }
 }
 section#contactForm {
-    background-color: white;
+    background-color: black;
     // padding: 40px 0px;
     p {
-        color: rgb(65, 65, 65);
+        color: rgb(200, 200, 200);
+    }
+    h2 {
+        color: white;
     }
     h4 {
-        color: black;
+        color: white;
         font-weight: 500;
     }
     h5 {
-        color: black;
+        color: white;
         font-weight: 500;
     }
     .email-us {
         h6 {
+            color: white;
             font-weight: bold;
         }
     }
@@ -118,7 +122,7 @@ section#contactForm {
         position: relative;
         display: inline-block;
         text-decoration: none;
-        color: black;
+        color: white;
     }
     .hover-underline-efx::after {
         position: absolute;
