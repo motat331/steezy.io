@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { IsSecureGuard } from './services/isSecure.guard';
 
 const appRoutes: Routes = [
     {
         path: '',
+        canActivate: [IsSecureGuard],
         children: [
             {
                 path: '',
