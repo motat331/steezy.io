@@ -1,0 +1,172 @@
+<section class="background">
+    <div class="container py-5">
+        <div class="row my-5">
+            <div class="col-sm-12 text-center">
+                <h1>Let's discuss your project</h1>
+                <p>Send us a message and we'll get back to you asap!</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-10 mx-auto">
+                <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                    <div id="contactForm">
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <h5>Tell us about yourself</h5>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input
+                                        name="firstName"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="First Name *"
+                                        required
+                                        minlength="2"
+                                        ngModel
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input
+                                        name="lastName"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Last Name *"
+                                        required
+                                        minlength="1"
+                                        ngModel
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input
+                                        name="email"
+                                        ngModel
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Email *"
+                                        email
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input
+                                        name="phoneNumber"
+                                        ngModel
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Phone Number"
+                                        mask="(000) 000 0000"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-5">
+                            <div class="col-12">
+                                <h5>Tell us about your project</h5>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <textarea
+                                    name="description"
+                                    ngModel
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Project Description *"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row mt-5">
+                            <div class="col-12">
+                                <div class="select-file-container">
+                                    <div class="select-file-button">
+                                        <input
+                                            ngModel
+                                            type="file"
+                                            (change)="
+                                                pickImage($event.target.files)
+                                            "
+                                            name="selectFile"
+                                            id="file"
+                                            class="select-file-input"
+                                            accept=".doc,.docx,.pdf,.xls,.xlsx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,image/png,image/jpeg,text/plain"
+                                        />Choose File
+                                    </div>
+                                    <p *ngIf="!this.fileToUpload">
+                                        PNG, JPEG, PDF, Word, Excel, and TXT
+                                        files smaller than 25MB in size are
+                                        supported.
+                                    </p>
+                                    <p *ngIf="this.fileToUpload">
+                                        {{ this.fileToUpload.name }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider mt-5"></div>
+                        <div class="form-row mt-5">
+                            <div class="col-12">
+                                <div class="button-flex">
+                                    <button
+                                        class="btn btn-primary btn-custom"
+                                        [ngClass]="
+                                            !contactForm.valid
+                                                ? 'btn-disabled'
+                                                : 'btn-enabled'
+                                        "
+                                        [disabled]="!contactForm.valid"
+                                    >
+                                        <span>Submit</span>
+                                        <fa-icon
+                                            [icon]="faLongArrowAltRight"
+                                        ></fa-icon>
+                                    </button>
+                                    <p>
+                                        By clicking submit button, you agree to
+                                        our
+                                        <a routerLink="/privacy"
+                                            >privacy policy</a
+                                        >.
+                                    </p>
+                                </div>
+                                <p
+                                    class="errorMessage mt-3"
+                                    *ngIf="showErrorMessage"
+                                >
+                                    There was an error submitting your form.
+                                    Contact us at
+                                    <a href="mailto:support@steezysite.com"
+                                        >support@steezysite.com</a
+                                    >
+                                </p>
+                                <p
+                                    class="successMessage mt-3"
+                                    *ngIf="showSuccessMessage"
+                                >
+                                    Thank you. We will get back to you soon!
+                                </p>
+                                <p
+                                    *ngIf="
+                                        !showSuccessMessage && !showErrorMessage
+                                    "
+                                >
+                                    &nbsp;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

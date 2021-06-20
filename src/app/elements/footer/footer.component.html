@@ -16,7 +16,10 @@
             </div>
         </div>
     </section>
-    <section *ngIf="!showContactUs()" id="footer-contact-us">
+    <section
+        *ngIf="!showContactUs() && !this.router.url.includes('contact')"
+        id="footer-contact-us"
+    >
         <div class="container py-5">
             <div class="row">
                 <div class="col-sm-12 text-center">
@@ -34,7 +37,10 @@
             </div>
         </div>
     </section>
-    <div class="horizontal-line">
+    <div
+        class="horizontal-line"
+        *ngIf="!showContactUs() && !this.router.url.includes('contact')"
+    >
         <div class="row">
             <div class="col-lg-12"><hr /></div>
         </div>

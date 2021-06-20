@@ -16,6 +16,13 @@ const appRoutes: Routes = [
                 (m) => m.ProjectItemModule
             ),
     },
+    {
+        path: 'contact',
+        loadChildren: () =>
+            import('./pages/contact/contact.module').then(
+                (m) => m.ContactModule
+            ),
+    },
 ];
 
 @NgModule({
