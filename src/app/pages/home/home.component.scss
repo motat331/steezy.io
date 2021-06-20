@@ -1,123 +1,147 @@
+$background-tint: #f4edf6;
 #mobileIntroduction {
     display: none;
 }
-section#waveContainer {
-    section#services-offered {
-        h5 {
-            letter-spacing: 4px;
-            font-size: 1rem;
-        }
-        h4 {
-            letter-spacing: 1.5px;
-            line-height: 1.5;
-            font-weight: 400;
-            font-size: 1.5rem;
-        }
-        h3 {
-            letter-spacing: 2px;
-            font-size: 2rem;
-        }
+section#hero {
+    margin-top: 6rem;
+    margin-bottom: 10rem;
+    h1 {
+        font-size: 4rem;
     }
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}
+section#whatWeDo {
+    background-color: $background-tint;
+    padding: 0px 0px 0px 0px;
+    p {
+        color: rgb(65, 65, 65);
+    }
+    #serviceCards {
+        display: flex;
+        justify-content: space-around;
+        width: 450px;
+        margin: 0 auto;
+        .service-card {
+            .card-image {
+                background-color: white;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
 
-    section#latest-projects {
-        h5 {
-            letter-spacing: 4px;
-            font-size: 1rem;
-        }
-        h2 {
-            font-family: "Encode Sans Semi Expanded", sans-serif;
-            font-size: 6rem;
-            font-weight: 600;
-        }
-        h3 {
-            letter-spacing: 2px;
-            font-size: 2rem;
-        }
-        #work-statement {
-            font-weight: 300;
-            font-size: 1.3rem;
-        }
-        .project-seperator {
-            background-color: black;
-            width: 100%;
-            height: 1px;
-            background-color: #d3d3d3;
-            margin: 0 auto;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .sideways-rectangle {
-            width: 400px;
-            margin: 0 auto;
-        }
-
-        #viewMoreProjects {
-            font-size: 1.2rem;
-            color: #404040;
-            text-transform: uppercase;
-            font-family: "Poppins", sans-serif;
-            a {
-                color: #404040;
+                img {
+                    width: 35px;
+                }
+            }
+            p {
+                color: #222222;
+                font-weight: bold;
             }
         }
     }
+}
+#caseStudy {
+    #caseDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
-    #contactForm {
-        background: rgba(228, 230, 231, 0.4);
-
-        h3 {
-            font-family: "Poppins", sans-serif;
-        }
-
-        p {
-            font-family: "Poppins", sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 1.1;
-            line-height: 1.8;
-            font-weight: 300;
+section#contactForm {
+    background-color: black;
+    // padding: 40px 0px;
+    p {
+        color: rgb(200, 200, 200);
+    }
+    h2 {
+        color: white;
+    }
+    h4 {
+        color: white;
+        font-weight: 500;
+    }
+    h5 {
+        color: white;
+        font-weight: 500;
+    }
+    .email-us {
+        h6 {
+            color: white;
+            font-weight: bold;
         }
     }
+    .hover-underline-efx {
+        padding: 0 0 10px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+    }
+    .hover-underline-efx::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #622c7a;
+        content: "";
+        opacity: 0;
+        -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+        -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+        transition: height 0.3s, opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    .hover-underline-efx:hover::after,
+    .hover-underline-efx:focus::after {
+        height: 5px;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
+#readMore {
+    display: block;
+    font-size: 0.8rem;
+    color: gray;
+    cursor: pointer;
 }
 
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {
-    #mobileIntroduction {
-        display: flex;
+    section#hero {
+        margin-bottom: 4rem;
+        h1 {
+            font-size: 2rem;
+        }
     }
-    #desktopIntroduction {
-        display: none;
-    }
-    section#waveContainer {
-        margin-top: 300px;
+    #wave {
         svg {
-            margin-bottom: -30px;
+            display: block;
         }
-        #whiteBGContainer {
-            background-color: white;
+    }
+    section#whatWeDo {
+        #serviceCards {
+            width: 100%;
         }
-        section#services-offered {
-            .cta-image {
-                width: 300px;
-            }
-            h5 {
-                font-size: 1.1rem;
-                color: rgb(1, 112, 16);
-            }
-            h4 {
-                font-size: 1.4rem;
-            }
-            h3 {
-                margin-bottom: 20px;
-            }
-        }
-        section#latest-projects {
-            h2 {
-                font-size: 3rem;
-            }
-        }
+    }
+    #caseDescription {
+        margin-top: 5rem;
+    }
+    .review-divider {
+        display: block !important;
     }
 }

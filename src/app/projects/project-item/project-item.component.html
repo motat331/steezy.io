@@ -1,73 +1,138 @@
-<div class="container" *ngIf="project$">
-    <div id="project-item-header" class="row">
-        <div class="col-lg-12 col-12 my-auto">
-            <h1>
-                {{ project$?.title.rendered }}
-            </h1>
-            <h4>
-                {{ project$?.projectTypeOfWork }}
-            </h4>
-            <!-- <h2>
-                {{ project$?.acf.projectDescription }}
-            </h2> -->
+<section id="hero">
+    <img [src]="project$?.hero" class="img-fluid" alt="" />
+</section>
+<section id="introContainer" class="light-bg custom-padding-y-sm">
+    <div class="container" *ngIf="project$">
+        <div id="intro">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <h1>{{ project$?.intro.left }}</h1>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-lg-5 col-sm-12 mt-3 mt-sm-0 vertical-align">
+                    <h4>
+                        {{ project$?.intro.right }}
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="tags mt-4">
+                        <p>
+                            {{ project$?.intro.tags }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12 mb-5 mx-auto">
-            <div class="project-divider"></div>
+</section>
+<section id="challangeContainer">
+    <div class="container-fluid py-0 py-sm-5">
+        <div class="container-small my-0 my-sm-5">
+            <section id="challange">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Challange</h2>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-10 col-sm-12">
+                        <p *ngFor="let paragraph of project$?.problem.text">
+                            {{ paragraph }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <img
+                            [src]="project$?.problem.image"
+                            alt=""
+                            class="img-fluid"
+                        />
+                        <p class="disclaimer">
+                            {{ project$?.problem.disclaimer }}
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+</section>
 
-    <div class="row overview first-row mb-5" *ngIf="!project$?.col_1_image">
-        <div class="col-sm-6 order-2 order-lg-1 vertical-align">
-            <p [innerHtml]="project$?.content.rendered"></p>
-        </div>
-        <div class="col-sm-6 order-1 order-lg-2 mb-lg-2 mb-5">
-            <img
-                src="{{ project$?.better_featured_image.source_url }}"
-                alt="{{ project$?.title.rendered }}"
-                class="img-responsive"
+<section id="newExperienceMobile">
+    <div id="wave">
+        <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 614 14.38"
+        >
+            <title>WaveThin</title>
+            <path
+                d="M614,30.37q-14.34-.82-28.68-1.63c-11.55-.64-23.08-1.52-34.66-1.8-22.6-.54-45.25-1.14-67.85-1-30.08.25-60.17,1-90.2,2-27.17.86-54.28,2.27-81.41,3.46-22.17,1-44.31,2.08-66.49,3-19.88.8-39.77,1.64-59.68,2-29.77.53-59.61,1.28-89.34.78C67,36.7,38.48,34.78,9.88,33.47c-3.3-.15-6.59-.39-9.88-.58V8.2c9.56.54,19.11,1.11,28.68,1.62,11.88.65,23.74,1.54,35.66,1.82,22.6.54,45.24,1,67.85.95,25.1-.11,50.21-.72,75.28-1.48,24.36-.74,48.68-1.88,73-3C307.76,6.91,335,5.47,362.3,4.28c16.22-.71,32.51-1,48.74-1.68,35.55-1.43,71.19-2,106.77-1.26,28.82.63,57.54,2.45,86.31,3.75,3.3.15,6.59.39,9.88.59Z"
+                style="fill: #6d4d75"
             />
-        </div>
+        </svg>
     </div>
+    <div class="wave-container custom-padding-y">
+        <div class="container">
+            <div class="row floating-row">
+                <div class="col-lg-6 col-sm-12 vertical-align">
+                    <h1>New Experience!</h1>
+                    <p>
+                        {{ project$?.newExperience.row1.text }}
+                    </p>
+                </div>
+                <!-- <div class="col-1"></div> -->
+                <div class="col-lg-6 col-sm-12 mt-5 mt-sm-0">
+                    <img
+                        [src]="project$?.newExperience.row1.image"
+                        alt=""
+                        class="img-fluid"
+                    />
+                </div>
+            </div>
+            <div class="row pt-5 pt-sm-5 mt-0 mt-sm-5">
+                <div
+                    class="col-lg-6 col-sm-12 mt-5 mt-sm-0 order-sm-1 order-12"
+                >
+                    <img
+                        [src]="project$?.newExperience.row2.image"
+                        alt=""
+                        class="img-fluid"
+                    />
+                </div>
 
-    <div class="row overview first-row" *ngIf="project$?.col_1_image">
-        <div class="col-sm-6 order-2 order-lg-1 vertical-align">
-            <h2 class="title" [innerHtml]="project$?.col_1_title"></h2>
-            <p [innerHtml]="project$?.col_1_text"></p>
-        </div>
-        <div class="col-sm-6 order-1 order-lg-2 mb-lg-2 mb-5 vertical-align">
-            <img
-                src="{{ project$?.col_1_image }}"
-                alt="{{ project$?.title.rendered }}"
-                class="img-responsive"
-            />
+                <div
+                    class="col-lg-6 col-sm-12 vertical-align order-sm-12 order-1"
+                >
+                    <p>
+                        {{ project$?.newExperience.row2.text }}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row overview my-5 second-row" *ngIf="project$?.col_2_image">
-        <div class="col-sm-6 order-2 order-lg-2 vertical-align">
-            <h2 class="title" [innerHtml]="project$?.col_2_title"></h2>
-            <p [innerHtml]="project$?.col_2_text"></p>
+</section>
+<section id="newExperienceDesktop" class="custom-padding-y">
+    <div class="container container-small">
+        <div class="row">
+            <div class="col-12">
+                <h2>{{ project$?.impact.header }}</h2>
+            </div>
         </div>
-        <div class="col-sm-6 order-1 order-lg-1 mb-lg-2 mb-5 vertical-align">
-            <img
-                src="{{ project$?.col_2_image }}"
-                alt="{{ project$?.title.rendered }}"
-                class="img-responsive"
-            />
+        <div class="row mt-4">
+            <div class="col-lg-10 col-sm-12">
+                <p *ngFor="let paragraph of project$?.impact.text">
+                    {{ paragraph }}
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="row overview third-row" *ngIf="project$?.col_3_image">
-        <div class="col-sm-6 order-2 order-lg-1 vertical-align">
-            <h2 class="title" [innerHtml]="project$?.col_3_title"></h2>
-            <p [innerHtml]="project$?.col_3_text"></p>
-        </div>
-        <div class="col-sm-6 order-1 order-lg-2 mb-lg-2 mb-5 vertical-align">
-            <img
-                src="{{ project$?.col_3_image }}"
-                alt="{{ project$?.title.rendered }}"
-                class="img-responsive"
-            />
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <img class="img-fluid" [src]="project$?.impact.image" alt="" />
+            </div>
         </div>
     </div>
-</div>
+</section>

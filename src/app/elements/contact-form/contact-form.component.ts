@@ -11,6 +11,7 @@ export class ContactFormComponent implements OnInit {
     @ViewChild('f') contactForm: NgForm;
     name: string;
     email: string;
+    phone: string;
     showSuccessMessage: boolean = false;
 
     constructor(private http: HttpClient) {}

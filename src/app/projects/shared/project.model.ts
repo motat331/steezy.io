@@ -41,4 +41,10 @@ export interface Project {
     col_3_title: any;
     col_3_text: any;
     col_3_image: any;
+    //
+    hero;
+    intro;
+    problem;
+    newExperience;
+    impact;
 }

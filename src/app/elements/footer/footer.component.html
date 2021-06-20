@@ -1,53 +1,25 @@
 <footer id="contactForm">
-    <section *ngIf="!viewMoreProjects()" id="view-projects">
-        <div class="container">
-            <div class="row py-lg-5 py-2">
-                <div class="col-sm-12">
-                    <a routerLink="/projects" class="hover-underline-efx">
-                        View More Projects
+    <section id="footer-contact-us">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Talk to an Expert</h3>
+                    <p>Let's discuss your project</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-12 text-center">
+                    <a routerLink="/contact" class="round-button">
+                        Contact Us
+                        <fa-icon [icon]="faLongArrowAltRight"></fa-icon>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="container horizontal-line">
-            <div class="row">
-                <div class="col-lg-12"><hr /></div>
-            </div>
-        </div>
     </section>
-
-    <section id="contact-area" class="py-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-lg-0 mb-5">
-                    <h5>Email</h5>
-                    <h4>
-                        <a
-                            href="mailto:hi@steezysite.com"
-                            class="hover-underline-efx"
-                            >hi@steezysite.com</a
-                        >
-                    </h4>
-                </div>
-                <div class="col-lg-8">
-                    <h5>Contact Us</h5>
-                    <app-contact-form></app-contact-form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="container horizontal-line">
+    <div class="horizontal-line">
         <div class="row">
             <div class="col-lg-12"><hr /></div>
         </div>
     </div>
-    <section id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>© 2021 SteezySite</p>
-                </div>
-            </div>
-        </div>
-    </section>
 </footer>

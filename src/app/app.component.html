@@ -1,5 +1,3 @@
-<app-header *ngIf="!isHomeRoute()" [headerStyle]="headerStyle"></app-header>
+<app-header *ngIf="!isHomeRoute()"></app-header>
 <router-outlet></router-outlet>
-<div *ngIf="!isLoaded">
-    <app-footer></app-footer>
-</div>
+<app-copyright *ngIf="!isLoaded"></app-copyright>

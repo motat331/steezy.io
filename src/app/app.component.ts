@@ -14,7 +14,6 @@ import { CanonicalService } from './projects/shared/canonical.service';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    headerStyle;
     isLoaded: boolean;
 
     constructor(
@@ -26,11 +25,10 @@ export class AppComponent {
     ngOnInit() {
         this.routerEvents();
 
-        this.headerStyle = 'abstract-background';
         this.canonicalService.setCanonicalURL();
         this.metaTagService.addTags([
             { name: 'robots', content: 'index, follow' },
-            { name: 'author', content: 'Steezysite' },
+            { name: 'author', content: 'Steezapp' },
             {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',
@@ -48,16 +46,15 @@ export class AppComponent {
     }
 
     routerEvents() {
-        this.router.events.subscribe((event: RouterEvent) => {
-            switch (true) {
-                case event instanceof NavigationStart: {
-                    this.isLoaded = true;
-                    break;
-                }
-                case event instanceof NavigationEnd: {
-                    this.isLoaded = false;
-                    break;
-                }
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+
+            var pos = window.pageYOffset;
+            if (pos > 0) {
+                window.scrollTo(0, pos - 20); // how far to scroll on each step
+            } else {
             }
         });
     }

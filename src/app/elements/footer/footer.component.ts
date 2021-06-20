@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-footer',
@@ -7,11 +8,16 @@ import { Router } from '@angular/router';
     styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-    constructor(private router: Router) {}
+    faLongArrowAltRight = faLongArrowAltRight;
+    constructor(public router: Router) {}
 
     ngOnInit(): void {}
 
-    viewMoreProjects() {
-        return this.router.url === '/projects';
+    showContactUs() {
+        return this.router.url.includes('projects');
+    }
+
+    navigateTo(url) {
+        this.router.navigate([url]);
     }
 }

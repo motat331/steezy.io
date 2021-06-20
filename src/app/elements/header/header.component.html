@@ -1,13 +1,19 @@
-<header id="main-header" [ngClass]="headerStyle">
-    <div class="container-fluid px-lg-5">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div id="header-logo-container">
-                <a routerLink="/"
-                    ><img
-                        src="assets/images/steezysite-logo-medium.png"
+<header id="main-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a routerLink="/">
+                <div id="header-logo-container">
+                    <!-- <img
+                        src="assets/images/stz-black.png"
                         alt="Steezysite Logo"
-                /></a>
-            </div>
+                    /> -->
+                    <img
+                        src="assets/images/logos/just-z-white.png"
+                        alt="Steezapp  Logo"
+                        width="20px"
+                    />
+                </div>
+            </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -31,21 +37,12 @@
                         >
                     </li>
                     <li routerLinkActive="active" class="my-auto nav-item">
-                        <a class="nav-link" routerLink="/projects">Websites</a>
+                        <a class="nav-link" routerLink="/projects">Projects</a>
                     </li>
-                    <!-- <li routerLinkActive="active" class="nav-item">
-                        <a class="nav-link" href="#">Graphics</a>
-                    </li>
-                    <li routerLinkActive="active" class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li> -->
-                    <li id="get-started" class="nav-item">
-                        <span
-                            class="nav-link"
-                            routerLink="./"
-                            fragment="contactForm"
-                            >Let's Connect
-                        </span>
+
+                    <li id="get-started" class="nav-item" routerLink="/contact">
+                        <span>Let's Connect </span>
+                        <fa-icon [icon]="faEnvelopeOpen"></fa-icon>
                     </li>
                 </ul>
             </div>
