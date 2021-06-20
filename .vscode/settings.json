@@ -4,7 +4,7 @@
         "e2e": true,
         ".browserslistrc": true,
         ".editorconfig": true,
-        // ".gitignore": true,
+        ".gitignore": true,
         // "angular.json": true,
         "karma.conf.js": true,
         // "package.json": true,
