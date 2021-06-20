@@ -1,19 +1,19 @@
 <header id="main-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div id="header-logo-container">
-                <a routerLink="/">
+            <a routerLink="/">
+                <div id="header-logo-container">
                     <!-- <img
                         src="assets/images/stz-black.png"
                         alt="Steezysite Logo"
                     /> -->
                     <img
-                        src="assets/images/logos/just-z.png"
+                        src="assets/images/logos/just-z-white.png"
                         alt="Steezapp  Logo"
                         width="20px"
                     />
-                </a>
-            </div>
+                </div>
+            </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -37,13 +37,12 @@
                         >
                     </li>
                     <li routerLinkActive="active" class="my-auto nav-item">
-                        <a class="nav-link" routerLink="/projects">Websites</a>
+                        <a class="nav-link" routerLink="/projects">Projects</a>
                     </li>
 
-                    <li id="get-started" class="nav-item">
-                        <a class="nav-link" routerLink="/contact">
-                            <span>Let's Connect </span>
-                        </a>
+                    <li id="get-started" class="nav-item" routerLink="/contact">
+                        <span>Let's Connect </span>
+                        <fa-icon [icon]="faEnvelopeOpen"></fa-icon>
                     </li>
                 </ul>
             </div>

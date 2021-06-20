@@ -3,15 +3,21 @@ header#thin-header {
     color: black;
 }
 .navbar {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 1rem 0rem;
 }
 
 header#main-header {
     background-size: cover;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     #header-logo-container {
-        padding: 25px 0px;
+        background-color: #622c7a;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
 
         img {
             // width: 100px;
@@ -33,31 +39,23 @@ header#main-header {
 }
 
 #get-started {
-    a {
-        text-decoration: none;
+    background-color: #622c7a;
+    border: 0;
+    font-size: 1.1rem;
+    border-radius: 36px;
+    padding: 15px 30px;
+    position: relative;
+    opacity: 1;
+    transition: all 0.4s ease;
+    color: white;
+    margin-left: 1.2rem;
+    cursor: pointer;
+    span {
+        margin-right: 10px;
     }
 
-    span {
-        font-size: 1rem;
-        color: white;
-        border-radius: 6px;
-        padding: 8px 12px;
-        transition: background-color 0.5s;
-        background-color: #622c7a;
-        color: white;
-        display: inline-block;
-
-        &:hover {
-            cursor: pointer;
-            transition: background-color 0.5s;
-            background-color: rgba(142, 77, 228, 0.09);
-            // color: #8e4de4;
-        }
-
-        fa-icon {
-            margin-left: 1px;
-            font-size: 1.2rem;
-        }
+    &:hover {
+        opacity: 0.8;
     }
 }
 

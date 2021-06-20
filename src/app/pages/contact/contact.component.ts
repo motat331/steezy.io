@@ -17,6 +17,17 @@ export class ContactComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    ngAfterViewInit() {
+        console.log('Init');
+        window.scrollTo(0, 0);
+        let top = document.getElementById('main-header');
+        if (top !== null) {
+            console.log('scroll into view');
+            top.scrollIntoView();
+            top = null;
+        }
+    }
+
     onSubmit(form: NgForm) {
         let formValues = form.form.value;
         const url =

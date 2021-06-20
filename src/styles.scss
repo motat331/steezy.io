@@ -43,7 +43,61 @@ fa-icon .fa-2x {
         margin-left: 10px;
     }
 }
+#feedbackFromClients {
+    background-color: $background-tint;
+    .review-divider {
+        display: none;
+    }
+    .review {
+        .review-title {
+            text-align: center;
+            img {
+                height: 70px;
+            }
+        }
+        .review-text {
+            background-color: white;
+            border-radius: 8px;
+            position: relative;
+            padding: 20px;
 
+            transition: all 0.4s ease;
+
+            .more {
+                opacity: 0;
+                transition: all 0.4s ease;
+
+                &.review-text {
+                    opacity: 1;
+                }
+            }
+
+            .triangle {
+                position: absolute;
+                bottom: -20px;
+                right: 50%;
+                transform: translate(50%, 0);
+                background-color: transparent;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid white;
+            }
+            &.review-extended {
+                min-height: 500px;
+            }
+        }
+        .review-author {
+            text-align: center;
+            .photo {
+                img {
+                    width: 70px;
+                }
+            }
+        }
+    }
+}
 .container-small {
     max-width: 940px;
     margin: 0 auto;

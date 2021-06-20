@@ -16,4 +16,8 @@ export class FooterComponent implements OnInit {
     showContactUs() {
         return this.router.url.includes('projects');
     }
+
+    navigateTo(url) {
+        this.router.navigate([url]);
+    }
 }

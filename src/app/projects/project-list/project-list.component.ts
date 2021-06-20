@@ -9,7 +9,6 @@ import { ParamsService } from '../shared/params.service';
 })
 export class ProjectListComponent implements OnInit {
     @Input() projects$: Project;
-    sliceAmount = 9;
 
     constructor(public paramService: ParamsService) {}
 

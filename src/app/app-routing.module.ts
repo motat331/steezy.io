@@ -36,6 +36,20 @@ const appRoutes: Routes = [
                         (m) => m.ContactModule
                     ),
             },
+            {
+                path: 'reviews',
+                loadChildren: () =>
+                    import('./pages/reviews/reviews.module').then(
+                        (m) => m.ReviewsModule
+                    ),
+            },
+            {
+                path: 'contactus',
+                loadChildren: () =>
+                    import('./pages/contactus/contactus.module').then(
+                        (m) => m.ContactusModule
+                    ),
+            },
         ],
     },
 
@@ -49,8 +63,7 @@ const appRoutes: Routes = [
             anchorScrolling: 'enabled',
             preloadingStrategy: PreloadAllModules,
             scrollPositionRestoration: 'enabled',
-            scrollOffset: [0, 64],
-            initialNavigation: 'enabledBlocking',
+            scrollOffset: [0, 0],
         }),
     ],
     exports: [RouterModule],

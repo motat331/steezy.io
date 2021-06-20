@@ -10,7 +10,6 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-    sliceAmount: number;
     faLongArrowAltRight = faLongArrowAltRight;
     showReview: boolean = false;
     constructor(
@@ -22,8 +21,6 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         if (!this.projectService.allProjects)
             this.projectService.fetchProjects().subscribe();
-        // this.paramsService.changeSliceAmount(3);
-        this.paramsService.sliceAmount = 3;
         this.util.setPageTitleAndMeta(
             'A web agency for people and brands',
             'Home page of Steezapp - a online presence agency helping people and brands develop and build out their websites and web applications.'
