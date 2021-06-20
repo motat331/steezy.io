@@ -1,9 +1,9 @@
 import { enableProdMode } from '@angular/core';
 
 import { environment } from './environments/environment';
-
+console.log('Envc Check -> ', environment.production);
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
 export { AppServerModule } from './app/app.server.module';
