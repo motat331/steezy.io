@@ -17,7 +17,6 @@ import { FooterModule } from './elements/footer/footer.module';
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomeComponent,
         ContactFormComponent,
         ProjectListComponent,
         ProjectsComponent,
