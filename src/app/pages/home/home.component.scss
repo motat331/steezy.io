@@ -112,6 +112,13 @@ section#contactForm {
     }
 }
 
+#readMore {
+    display: block;
+    font-size: 0.8rem;
+    color: gray;
+    cursor: pointer;
+}
+
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {

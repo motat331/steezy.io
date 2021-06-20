@@ -9,7 +9,10 @@ const appRoutes: Routes = [
         children: [
             {
                 path: '',
-                component: HomeComponent,
+                loadChildren: () =>
+                    import('./pages/home/home.module').then(
+                        (m) => m.HomeModule
+                    ),
             },
             {
                 path: 'privacy',
@@ -41,13 +44,6 @@ const appRoutes: Routes = [
                 loadChildren: () =>
                     import('./pages/reviews/reviews.module').then(
                         (m) => m.ReviewsModule
-                    ),
-            },
-            {
-                path: 'contactus',
-                loadChildren: () =>
-                    import('./pages/contactus/contactus.module').then(
-                        (m) => m.ContactusModule
                     ),
             },
         ],

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../shared/project.model';
 import { ParamsService } from '../shared/params.service';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-project-list',
@@ -9,6 +10,7 @@ import { ParamsService } from '../shared/params.service';
 })
 export class ProjectListComponent implements OnInit {
     @Input() projects$: Project;
+    faLongArrowAltRight = faLongArrowAltRight;
 
     constructor(public paramService: ParamsService) {}
 

@@ -1,25 +1,5 @@
 <footer id="contactForm">
-    <section *ngIf="showContactUs()" id="footer-contact-us">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h3>Let's discuss your project</h3>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-sm-12 text-center">
-                    <a routerLink="/contact" class="round-button">
-                        Contact Us
-                        <fa-icon [icon]="faLongArrowAltRight"></fa-icon>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section
-        *ngIf="!showContactUs() && !this.router.url.includes('contact')"
-        id="footer-contact-us"
-    >
+    <section id="footer-contact-us">
         <div class="container py-5">
             <div class="row">
                 <div class="col-sm-12 text-center">
@@ -37,30 +17,9 @@
             </div>
         </div>
     </section>
-    <div
-        class="horizontal-line"
-        *ngIf="!showContactUs() && !this.router.url.includes('contact')"
-    >
+    <div class="horizontal-line">
         <div class="row">
             <div class="col-lg-12"><hr /></div>
         </div>
     </div>
-    <section id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="footer-split">
-                        <div id="footerNav">
-                            <a routerLink="">Home</a>
-                            <a routerLink="projects">Projects</a>
-                            <a routerLink="reviews">Reviews</a>
-                            <a routerLink="contactus">Contact</a>
-                            <a routerLink="privacy">Privacy Policy</a>
-                        </div>
-                        <p>Irvine, CA 92614, USA | © Steezapp 2021</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </footer>
