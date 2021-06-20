@@ -192,4 +192,16 @@ footer#copyright {
             }
         }
     }
+    .footer-split {
+        flex-direction: column;
+        #footerNav {
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 30px;
+            a {
+                margin: 0;
+                font-size: 0.7rem;
+            }
+        }
+    }
 }
