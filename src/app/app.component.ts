@@ -28,7 +28,7 @@ export class AppComponent {
         this.canonicalService.setCanonicalURL();
         this.metaTagService.addTags([
             { name: 'robots', content: 'index, follow' },
-            { name: 'author', content: 'Steezysite' },
+            { name: 'author', content: 'Steezapp' },
             {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',

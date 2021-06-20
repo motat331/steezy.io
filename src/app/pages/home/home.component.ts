@@ -12,6 +12,7 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 export class HomeComponent implements OnInit {
     sliceAmount: number;
     faLongArrowAltRight = faLongArrowAltRight;
+    showReview: boolean = false;
     constructor(
         public paramsService: ParamsService,
         public projectService: ProjectService,
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
         this.paramsService.sliceAmount = 3;
         this.util.setPageTitleAndMeta(
             'A web agency for people and brands',
-            'Home page of Steezysite - a online presence agency helping people and brands develop and build out their websites and web applications.'
+            'Home page of Steezapp - a online presence agency helping people and brands develop and build out their websites and web applications.'
         );
     }
 }

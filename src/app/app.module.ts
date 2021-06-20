@@ -13,7 +13,7 @@ import { FooterComponent } from './elements/footer/footer.component';
 import { ContactFormComponent } from './elements/contact-form/contact-form.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 @NgModule({
     declarations: [

@@ -8,7 +8,7 @@ export class UtilService {
     constructor(private metaTagService: Meta, private titleService: Title) {}
 
     setPageTitleAndMeta(title: string, description: string) {
-        this.titleService.setTitle('Steezysite - ' + title);
+        this.titleService.setTitle('Steezapp - ' + title);
         this.metaTagService.updateTag({
             name: 'description',
             content: description,

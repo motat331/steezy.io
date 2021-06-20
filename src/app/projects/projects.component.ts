@@ -25,7 +25,7 @@ export class ProjectsComponent implements OnInit {
 
         this.util.setPageTitleAndMeta(
             'our projects',
-            'A listing page which shows Steezysites past projects'
+            'A listing page which shows Steezapps past projects'
         );
     }
 }
