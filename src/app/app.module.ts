@@ -12,6 +12,7 @@ import { ProjectListComponent } from './projects/project-list/project-list.compo
 import { ProjectsComponent } from './projects/projects.component';
 import { CopyrightComponent } from './elements/copyright/copyright.component';
 import { FooterModule } from './elements/footer/footer.module';
+import { IsSecureGuard } from './services/isSecure.guard';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,7 @@ import { FooterModule } from './elements/footer/footer.module';
         FormsModule,
         FooterModule,
     ],
-    providers: [],
+    providers: [IsSecureGuard],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
