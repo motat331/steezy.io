@@ -137,3 +137,54 @@ p {
     color: red;
     font-size: 0.8rem;
 }
+
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
+// Media Queries for Responsiveness
+
+@media (max-width: 758px) {
+    .form-control {
+        font-size: 1rem !important;
+    }
+    .btn-mobile {
+        width: 100%;
+        margin-bottom: 20px;
+        fa-icon {
+            position: initial;
+        }
+        span {
+            margin-right: 10px;
+        }
+    }
+    .privacy-agreement {
+        font-size: 0.7rem;
+        text-align: center;
+        margin: 0;
+    }
+    .successMessage {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .desktop {
+        display: none !important;
+    }
+    .mobile {
+        display: block !important;
+        width: 100%;
+    }
+    #intro {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }
+    #contactForm {
+        padding: 30px 20px;
+    }
+}

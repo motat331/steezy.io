@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UtilService } from 'src/app/services/util/util.service';
 
 @Component({
     selector: 'app-contact',
@@ -13,9 +14,14 @@ export class ContactComponent implements OnInit {
     fileToUpload: File;
     showSuccessMessage: boolean = false;
     showErrorMessage: boolean = false;
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private util: UtilService) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.util.setPageTitleAndMeta(
+            'Contact Us',
+            'Contact Steezapp regarding new business or questions'
+        );
+    }
 
     ngAfterViewInit() {}
 

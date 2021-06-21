@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { IsSecureGuard } from './services/isSecure.guard';
+import { IsSecureGuard } from './services/guards/isSecure.guard';
 
 const appRoutes: Routes = [
     {
@@ -25,14 +23,17 @@ const appRoutes: Routes = [
             },
             {
                 path: 'projects',
-                component: ProjectsComponent,
+                loadChildren: () =>
+                    import('./pages/projects/projects.module').then(
+                        (m) => m.ProjectsModule
+                    ),
             },
             {
                 path: 'projects/:slug',
                 loadChildren: () =>
-                    import('./projects/project-item/project-item.module').then(
-                        (m) => m.ProjectItemModule
-                    ),
+                    import(
+                        './pages/projects/project-item/project-item.module'
+                    ).then((m) => m.ProjectItemModule),
             },
             {
                 path: 'contact',

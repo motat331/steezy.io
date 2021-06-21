@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ReviewsRoutingModule } from './reviews-routing.module';
 import { ReviewsComponent } from './reviews.component';
-import { FooterModule } from '../../elements/footer/footer.module';
+import { FooterModule } from '../../components/footer/footer.module';
 
 @NgModule({
     declarations: [ReviewsComponent],

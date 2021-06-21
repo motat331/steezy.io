@@ -6,7 +6,7 @@ import {
     NavigationEnd,
 } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
-import { CanonicalService } from './projects/shared/canonical.service';
+import { CanonicalService } from './services/canonical/canonical.service';
 
 @Component({
     selector: 'app-root',

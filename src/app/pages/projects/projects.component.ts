@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from './shared/project.service';
-import { ParamsService } from './shared/params.service';
-import { UtilService } from './shared/util.service';
+import { ProjectService } from '../../services/projects/project.service';
+import { UtilService } from '../../services/util/util.service';
 
 @Component({
     selector: 'app-project',
@@ -11,7 +10,6 @@ import { UtilService } from './shared/util.service';
 export class ProjectsComponent implements OnInit {
     projects$: any;
     constructor(
-        private paramsService: ParamsService,
         public projectService: ProjectService,
         private util: UtilService
     ) {}
@@ -21,7 +19,7 @@ export class ProjectsComponent implements OnInit {
             this.projectService.fetchProjects().subscribe();
 
         this.util.setPageTitleAndMeta(
-            'our projects',
+            'Our Projects',
             'A listing page which shows Steezapps past projects'
         );
     }

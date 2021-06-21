@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../shared/project.service';
+import { ProjectService } from '../../../services/projects/project.service';
 import { ActivatedRoute } from '@angular/router';
-import { UtilService } from '../shared/util.service';
+import { UtilService } from '../../../services/util/util.service';
 
 @Component({
     selector: 'app-project-item',

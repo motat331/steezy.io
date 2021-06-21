@@ -1,22 +1,22 @@
 <section class="background">
-    <div class="container py-5">
-        <div class="row my-5">
-            <div class="col-sm-12 text-center">
+    <div class="container py-lg-5 py-1">
+        <div class="row my-lg-5 my-4">
+            <div class="col-sm-12 text-center" id="intro">
                 <h1>Let's discuss your project</h1>
                 <p>Send us a message and we'll get back to you asap!</p>
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-10 mx-auto">
+            <div class="col-lg-10 col-12 mx-auto">
                 <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                     <div id="contactForm">
-                        <div class="row mb-5">
+                        <div class="row mb-lg-5 mb-2">
                             <div class="col-12">
                                 <h5>Tell us about yourself</h5>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-6">
+                            <div class="col-lg-6 col-12">
                                 <div class="form-group">
                                     <input
                                         name="firstName"
@@ -29,7 +29,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6 col-12">
                                 <div class="form-group">
                                     <input
                                         name="lastName"
@@ -43,8 +43,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row mt-4">
-                            <div class="col-6">
+                        <div class="form-row mt-lg-4">
+                            <div class="col-lg-6 col-12">
                                 <div class="form-group">
                                     <input
                                         name="email"
@@ -57,7 +57,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6 col-12">
                                 <div class="form-group">
                                     <input
                                         name="phoneNumber"
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row my-5">
+                        <div class="row my-lg-5 mt-4 mb-2">
                             <div class="col-12">
                                 <h5>Tell us about your project</h5>
                             </div>
@@ -114,8 +114,8 @@
                             </div>
                         </div>
                         <div class="divider mt-5"></div>
-                        <div class="form-row mt-5">
-                            <div class="col-12">
+                        <div class="form-row mt-lg-5 mt-1">
+                            <div class="col-12" class="desktop">
                                 <div class="button-flex">
                                     <button
                                         class="btn btn-primary btn-custom"
@@ -161,6 +161,53 @@
                                     "
                                 >
                                     &nbsp;
+                                </p>
+                            </div>
+                            <div class="col-12" class="mobile">
+                                <p
+                                    class="errorMessage mt-3"
+                                    *ngIf="showErrorMessage"
+                                >
+                                    There was an error submitting your form.
+                                    Contact us at
+                                    <a href="mailto:support@steezapp.com"
+                                        >support@steezapp.com</a
+                                    >
+                                </p>
+                                <p
+                                    class="successMessage mt-3"
+                                    *ngIf="showSuccessMessage"
+                                >
+                                    <b>Thank you.</b> We will get back to you
+                                    soon!
+                                </p>
+                                <p
+                                    *ngIf="
+                                        !showSuccessMessage && !showErrorMessage
+                                    "
+                                >
+                                    &nbsp;
+                                </p>
+                                <div class="button-flex">
+                                    <button
+                                        class="btn btn-primary btn-custom btn-mobile"
+                                        [ngClass]="
+                                            !contactForm.valid
+                                                ? 'btn-disabled'
+                                                : 'btn-enabled'
+                                        "
+                                        [disabled]="!contactForm.valid"
+                                    >
+                                        <span>Submit</span>
+                                        <fa-icon
+                                            [icon]="faLongArrowAltRight"
+                                        ></fa-icon>
+                                    </button>
+                                </div>
+                                <p class="privacy-agreement">
+                                    By clicking submit button,<br />you agree to
+                                    our
+                                    <a routerLink="/privacy">privacy policy</a>.
                                 </p>
                             </div>
                         </div>

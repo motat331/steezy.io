@@ -4,25 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './elements/header/header.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ContactFormComponent } from './elements/contact-form/contact-form.component';
-import { ProjectListComponent } from './projects/project-list/project-list.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { CopyrightComponent } from './elements/copyright/copyright.component';
-import { FooterModule } from './elements/footer/footer.module';
-import { IsSecureGuard } from './services/isSecure.guard';
+import { CopyrightComponent } from './components/copyright/copyright.component';
+import { FooterModule } from './components/footer/footer.module';
+import { IsSecureGuard } from './services/guards/isSecure.guard';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        ContactFormComponent,
-        ProjectListComponent,
-        ProjectsComponent,
-        CopyrightComponent,
-    ],
+    declarations: [AppComponent, HeaderComponent, CopyrightComponent],
     imports: [
         BrowserModule.withServerTransition({ appId: 'steezysite3' }),
         FontAwesomeModule,
