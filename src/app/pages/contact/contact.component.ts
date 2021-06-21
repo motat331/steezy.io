@@ -23,8 +23,6 @@ export class ContactComponent implements OnInit {
         );
     }
 
-    ngAfterViewInit() {}
-
     onSubmit(form: NgForm) {
         let formValues = form.form.value;
         const url =
@@ -57,18 +55,5 @@ export class ContactComponent implements OnInit {
         } else {
             this.fileToUpload = file;
         }
-        // if (event.target.files && event.target.files.length) {
-        //     let file = event.target.files[0];
-        // }
     }
-
-    // checkFileSize(image) {
-    //     return new Promise((resolve, reject) => {
-    //         const reader = new FileReader();
-    //         reader.readAsDataURL(image);
-    //         reader.onload = () => {
-    //             const file = new File();
-    //         };
-    //     });
-    // }
 }

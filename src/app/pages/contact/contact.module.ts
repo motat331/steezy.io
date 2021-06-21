@@ -6,6 +6,7 @@ import { ContactComponent } from './contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { FooterModule } from 'src/app/components/footer/footer.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -16,6 +17,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
         ContactRoutingModule,
         FontAwesomeModule,
         FormsModule,
+        FooterModule,
         NgxMaskModule.forRoot(),
     ],
 })
