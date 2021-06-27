@@ -2,21 +2,17 @@ p {
     color: #333;
     font-size: 1rem;
     line-height: 30px;
+    text-align: justify;
 }
 section#introContainer {
     div#intro {
-        h1 {
-            letter-spacing: 1px;
-        }
         h4 {
             font-weight: 300;
             font-size: 1.8rem;
-            letter-spacing: 1px;
         }
         .tags {
             p {
                 color: rgb(158, 158, 158);
-                text-transform: uppercase;
                 font-size: 1rem;
                 letter-spacing: 0.9px;
                 font-weight: 500;

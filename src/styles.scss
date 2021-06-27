@@ -7,8 +7,21 @@ html,
 body,
 p,
 span {
-    font-family: "Poppins", sans-serif;
+    // font-family: "Mulish", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
+h1,
+h2,
+h3 {
+    font-family: "Merriweather", serif;
+}
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}
+
 body,
 html {
     overflow-x: hidden;
