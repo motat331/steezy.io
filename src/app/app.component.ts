@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { CanonicalService } from './services/canonical/canonical.service';
+import { UtilService } from './services/util/util.service';
 
 @Component({
     selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
     constructor(
         private router: Router,
         private metaTagService: Meta,
-        private canonicalService: CanonicalService
+        private canonicalService: CanonicalService,
+        public util: UtilService
     ) {}
 
     ngOnInit() {

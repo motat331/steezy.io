@@ -5,6 +5,7 @@ import { Title, Meta } from '@angular/platform-browser';
     providedIn: 'root',
 })
 export class UtilService {
+    newsLetterShow: boolean = false;
     constructor(private metaTagService: Meta, private titleService: Title) {}
 
     setPageTitleAndMeta(title: string, description: string) {

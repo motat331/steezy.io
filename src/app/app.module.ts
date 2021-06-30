@@ -9,9 +9,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { FooterModule } from './components/footer/footer.module';
 import { IsSecureGuard } from './services/guards/isSecure.guard';
+import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, CopyrightComponent],
+    declarations: [AppComponent, HeaderComponent, CopyrightComponent, NewsletterPopupComponent],
     imports: [
         BrowserModule.withServerTransition({ appId: 'steezysite3' }),
         FontAwesomeModule,
