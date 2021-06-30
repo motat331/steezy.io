@@ -1,6 +1,23 @@
 <div id="newsLetterContainer">
     <div id="newsLetterPopup" #popup>
-        <div id="mc_embed_signup">
+        <div id="closeButton" (click)="closeButton()">
+            <fa-icon [icon]="faTimes"></fa-icon>
+        </div>
+        <div id="success" *ngIf="signUpSuccess">
+            <fa-icon [icon]="faNewspaper"></fa-icon>
+            <h3>You're Set!</h3>
+            <p>Thank you for subscribing</p>
+        </div>
+        <div id="loaderDiv" *ngIf="formSpinner">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div
+            id="mc_embed_signup"
+            [ngClass]="signUpSuccess ? 'success-msg' : 'null'"
+        >
             <form
                 action="https://steezapp.us6.list-manage.com/subscribe/post?u=3303b5925032574875fd2c0b0&amp;id=e3bd62d6f7"
                 method="post"
@@ -8,12 +25,15 @@
                 name="mc-embedded-subscribe-form"
                 class="validate"
                 target="_blank"
-                novalidate
                 #newsletterForm="ngForm"
+                (ngSubmit)="onSubmit()"
             >
-                <div class="form-row mt-lg-4">
+                <div class="form-row mt-lg-1">
                     <div class="col-lg-12 col-12">
                         <div class="form-group">
+                            <!-- <p id="emailExists">
+                                This email is already on the newsletter
+                            </p> -->
                             <input
                                 name="EMAIL"
                                 type="email"
@@ -21,8 +41,10 @@
                                 value=""
                                 class="form-control"
                                 placeholder="Email *"
+                                ngModel
                                 email
                                 required
+                                [(ngModel)]="message.EMAIL"
                             />
                         </div>
                     </div>
@@ -37,7 +59,9 @@
                                 class="form-control"
                                 id="mce-FNAME"
                                 required
+                                ngModel
                                 placeholder="Firstname *"
+                                [(ngModel)]="message.FNAME"
                             />
                         </div>
                     </div>
@@ -53,6 +77,7 @@
                                 id="mce-LNAME"
                                 required
                                 placeholder="Lastname"
+                                [(ngModel)]="message.LNAME"
                             />
                         </div>
                     </div>

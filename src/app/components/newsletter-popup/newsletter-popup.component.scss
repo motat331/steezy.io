@@ -8,18 +8,91 @@
         top: 50%;
         right: 50%;
         background-color: #622c7a;
-        padding: 20px 50px;
+        padding: 10px 30px;
         border-radius: 5px;
-        width: 400px;
+        width: 320px;
         transform: translate(50%, -50%);
         p#privacyDisclaimer {
-            color: rgb(128, 128, 128);
+            margin-top: 10px;
+            color: rgb(212, 212, 212);
             font-size: 0.7rem;
             text-align: center;
             a {
-                color: #622c7a;
+                color: #ffffff;
             }
         }
+    }
+}
+textarea:focus,
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(255, 2555, 255, 0.25);
+}
+.btn-custom {
+    background-color: white;
+    color: #622c7a;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 5px 30px;
+    width: 100%;
+}
+.success-msg {
+    visibility: hidden;
+}
+#success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    fa-icon {
+        color: white;
+        font-size: 4rem;
+    }
+    h3 {
+        color: white;
+    }
+    p {
+        color: rgb(212, 212, 212);
+        font-size: 0.9rem;
+    }
+}
+#closeButton {
+    color: white;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 200;
+}
+#loaderDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#emailExists {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgb(255, 162, 162);
+    text-align: center;
+    &.show {
+        visibility: display;
+    }
+    &.hide {
+        visibility: hidden;
     }
 }
 $placeholder: rgb(236, 236, 236);
