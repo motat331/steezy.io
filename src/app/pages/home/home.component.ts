@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
             this.projectService.fetchProjects().subscribe();
         this.util.setPageTitleAndMeta(
             'A web agency for people and brands',
-            'Home page of Steezapp - a online presence agency helping people and brands develop and build out their websites and web applications.'
+            'Home page of Steezapp - We build simple and powerful web and mobile apps.'
         );
     }
 }
