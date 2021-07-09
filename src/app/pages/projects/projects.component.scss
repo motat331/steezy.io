@@ -2,11 +2,12 @@
     padding-bottom: 50px;
 }
 .project-item {
-    margin-bottom: 100px;
     box-shadow: 1px 1px 5px rgb(221, 221, 221);
     border-radius: 7px;
     background-color: white;
     transition: scale 0.6s ease 0s, transform 0.6s ease 0s;
+    height: 100%;
+    cursor: pointer;
 
     .steezy-image {
         height: 250px;
@@ -23,10 +24,21 @@
     }
     .description {
         padding: 20px;
-        height: 120px;
+        // height: 120px;
         h2 {
             font-size: 1.5rem;
             color: black;
+            margin: 0;
+        }
+        .tags {
+            font-size: 0.7rem;
+            color: grey;
+            margin-bottom: 15px;
+        }
+        .project-description {
+            font-size: 0.9rem;
+            color: grey;
+            margin: 0;
         }
     }
 }
