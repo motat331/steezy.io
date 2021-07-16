@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
     fileToUpload: File;
     showSuccessMessage: boolean = false;
     showErrorMessage: boolean = false;
+    submitSpinner: boolean = false;
     constructor(private http: HttpClient, private util: UtilService) {}
 
     ngOnInit(): void {
@@ -24,6 +25,8 @@ export class ContactComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
+        this.submitSpinner = true;
+
         let formValues = form.form.value;
         const url =
             'https://admin.steezy.io/wp-json/contact-form-7/v1/contact-forms/22/feedback';
@@ -39,10 +42,14 @@ export class ContactComponent implements OnInit {
         this.http.post(url, formData).subscribe((res: any) => {
             if (res.status == 'mail_sent') {
                 this.showSuccessMessage = true;
+                this.showErrorMessage = false;
                 form.reset();
             } else {
                 this.showErrorMessage = true;
+                this.showSuccessMessage = false;
             }
+            this.submitSpinner = false;
+
             console.log(res);
         });
     }

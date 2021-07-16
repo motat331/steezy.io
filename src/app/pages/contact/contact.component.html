@@ -126,10 +126,22 @@
                                         "
                                         [disabled]="!contactForm.valid"
                                     >
-                                        <span>Submit</span>
+                                        <span *ngIf="!submitSpinner"
+                                            >Submit</span
+                                        >
                                         <fa-icon
+                                            *ngIf="!submitSpinner"
                                             [icon]="faLongArrowAltRight"
                                         ></fa-icon>
+                                        <div
+                                            class="lds-ellipsis"
+                                            *ngIf="submitSpinner"
+                                        >
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
                                     </button>
                                     <p>
                                         By clicking submit button, you agree to
@@ -198,10 +210,22 @@
                                         "
                                         [disabled]="!contactForm.valid"
                                     >
-                                        <span>Submit</span>
+                                        <span *ngIf="!submitSpinner"
+                                            >Submit</span
+                                        >
                                         <fa-icon
+                                            *ngIf="!submitSpinner"
                                             [icon]="faLongArrowAltRight"
                                         ></fa-icon>
+                                        <div
+                                            class="lds-ellipsis"
+                                            *ngIf="submitSpinner"
+                                        >
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
                                     </button>
                                 </div>
                                 <p class="privacy-agreement">
