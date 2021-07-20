@@ -35,7 +35,6 @@ export class ProjectService {
                             title: item.title,
                             better_featured_image: item.better_featured_image,
                             projectDescription: item.acf.projectDescription,
-                            featured: item.acf.featured,
                             hero: item.acf.hero_image
                                 ? item.acf.hero_image.url
                                 : '',

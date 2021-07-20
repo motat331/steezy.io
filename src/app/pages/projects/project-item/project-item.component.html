@@ -33,7 +33,7 @@
             <section id="challange">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Challange</h2>
+                        <h2>{{ project$?.problem.header }}</h2>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -43,7 +43,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-5" *ngIf="project$?.problem.image">
                     <div class="col-12 text-center">
                         <img
                             [src]="project$?.problem.image"
