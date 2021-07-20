@@ -80,8 +80,12 @@
             <div class="row floating-row">
                 <div class="col-lg-6 col-sm-12 vertical-align">
                     <h1>New Experience!</h1>
-                    <p>
-                        {{ project$?.newExperience.row1.text }}
+                    <p
+                        *ngFor="
+                            let paragraph of project$?.newExperience.row1.text
+                        "
+                    >
+                        {{ paragraph }}
                     </p>
                 </div>
                 <!-- <div class="col-1"></div> -->
@@ -107,8 +111,12 @@
                 <div
                     class="col-lg-6 col-sm-12 vertical-align order-sm-12 order-1"
                 >
-                    <p>
-                        {{ project$?.newExperience.row2.text }}
+                    <p
+                        *ngFor="
+                            let paragraph of project$?.newExperience.row2.text
+                        "
+                    >
+                        {{ paragraph }}
                     </p>
                 </div>
             </div>

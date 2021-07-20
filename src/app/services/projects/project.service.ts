@@ -33,21 +33,9 @@ export class ProjectService {
                             id: item.id,
                             slug: item.slug,
                             title: item.title,
-                            content: item.content,
                             better_featured_image: item.better_featured_image,
                             projectDescription: item.acf.projectDescription,
-                            projectTypeOfWork: item.acf.projectTypeOfWork,
-                            sliderLinks: item.acf.sliderLinks,
                             featured: item.acf.featured,
-                            col_1_title: item.acf.col_1_title,
-                            col_1_text: item.acf.col_1_text,
-                            col_1_image: item.acf.col_1_image,
-                            col_2_title: item.acf.col_2_title,
-                            col_2_text: item.acf.col_2_text,
-                            col_2_image: item.acf.col_2_image,
-                            col_3_title: item.acf.col_3_title,
-                            col_3_text: item.acf.col_3_text,
-                            col_3_image: item.acf.col_3_image,
                             hero: item.acf.hero_image
                                 ? item.acf.hero_image.url
                                 : '',
@@ -70,13 +58,17 @@ export class ProjectService {
                             },
                             newExperience: {
                                 row1: {
-                                    text: item.acf.row_1_text,
+                                    text: this.splitIntoParagraphs(
+                                        item.acf.row_1_text
+                                    ),
                                     image: item.acf.row_1_image
                                         ? item.acf.row_1_image.url
                                         : '',
                                 },
                                 row2: {
-                                    text: item.acf.row_2_text,
+                                    text: this.splitIntoParagraphs(
+                                        item.acf.row_2_text
+                                    ),
                                     image: item.acf.row_2_image
                                         ? item.acf.row_2_image.url
                                         : '',
@@ -94,6 +86,8 @@ export class ProjectService {
                                     : '',
                             },
                         };
+
+                        console.log('Project -> ');
 
                         return project;
                     });
