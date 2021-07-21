@@ -26,6 +26,7 @@ export class ProjectItemComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        this.util.pageLoading = true;
         const slug = this.route.snapshot.params['slug'];
 
         if (this.projectService.allProjects) {
@@ -38,12 +39,14 @@ export class ProjectItemComponent implements OnInit {
                     this.project$.title.rendered +
                     ' which shows how we helped the client with their online presence.'
             );
+            this.util.pageLoading = false;
         } else {
             this.projectService.fetchProjects().subscribe((res) => {
                 this.project$ = this.projectService.allProjects.find(
                     (project: any) => project.slug == slug
                 );
                 console.log('Project -> ', this.project$);
+                this.util.pageLoading = false;
                 this.util.setPageTitleAndMeta(
                     this.project$.title.rendered,
                     'A portfolio page for ' +
