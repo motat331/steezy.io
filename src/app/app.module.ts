@@ -10,6 +10,7 @@ import { CopyrightComponent } from './components/copyright/copyright.component';
 import { FooterModule } from './components/footer/footer.module';
 import { IsSecureGuard } from './services/guards/isSecure.guard';
 import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
+import { GoogleAnalyticsGtagComponent } from './components/google-analytics-gtag/google-analytics-gtag.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { NewsletterPopupComponent } from './components/newsletter-popup/newslett
         HeaderComponent,
         CopyrightComponent,
         NewsletterPopupComponent,
+        GoogleAnalyticsGtagComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'steezysite3' }),

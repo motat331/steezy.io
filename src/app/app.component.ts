@@ -8,6 +8,7 @@ import {
 import { Meta } from '@angular/platform-browser';
 import { CanonicalService } from './services/canonical/canonical.service';
 import { UtilService } from './services/util/util.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-root',
@@ -16,6 +17,7 @@ import { UtilService } from './services/util/util.service';
 })
 export class AppComponent {
     isLoaded: boolean;
+    production: boolean = environment.production;
 
     constructor(
         private router: Router,
