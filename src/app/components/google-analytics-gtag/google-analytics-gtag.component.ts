@@ -10,7 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
     selector: 'app-google-analytics-gtag',
     templateUrl: './google-analytics-gtag.component.html',
-    styleUrls: ['./google-analytics-gtag.component.scss'],
+    styleUrls: [],
 })
 export class GoogleAnalyticsGtagComponent {
     trackingCode = 'UA-149575862-1';
