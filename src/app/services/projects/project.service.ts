@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Project } from './project.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -14,21 +15,16 @@ export class ProjectService {
 
     constructor(private http: HttpClient) {}
 
-    getAllProjects(): Observable<Project[]> {
-        return this.http.get<any>(
-            'https://admin.steezy.io/wp-json/wp/v2/posts?categories=5'
-        );
-    }
-
     fetchProjects() {
         return this.http
             .get<any[]>(
-                'https://admin.steezy.io/wp-json/wp/v2/posts?categories=5'
+                environment.apiBase + '/wp-json/wp/v2/portfolios?categories=5'
             )
             .pipe(
                 map((projects: any) => {
                     const newProjects = projects.map((item: any) => {
                         let project: Project;
+                        console.log('Item -> ', item);
                         project = {
                             id: item.id,
                             slug: item.slug,
@@ -86,8 +82,6 @@ export class ProjectService {
                             },
                         };
 
-                        console.log('Project -> ');
-
                         return project;
                     });
                     this.allProjects = newProjects;
@@ -106,7 +100,7 @@ export class ProjectService {
 
     getSingleProject(slug: string): Observable<Project[]> {
         return this.http.get<any>(
-            'https://admin.steezy.io/wp-json/wp/v2/posts?slug=' + slug
+            environment.apiBase + '/wp-json/wp/v2/posts?slug=' + slug
         );
     }
 }

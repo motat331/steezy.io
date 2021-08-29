@@ -3,6 +3,7 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UtilService } from 'src/app/services/util/util.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-contact',
@@ -29,7 +30,8 @@ export class ContactComponent implements OnInit {
 
         let formValues = form.form.value;
         const url =
-            'https://admin.steezy.io/wp-json/contact-form-7/v1/contact-forms/22/feedback';
+            environment.apiBase +
+            '/wp-json/contact-form-7/v1/contact-forms/22/feedback';
         const formData = new FormData();
         formData.append('firstName', formValues.firstName);
         formData.append('lastName', formValues.lastName);

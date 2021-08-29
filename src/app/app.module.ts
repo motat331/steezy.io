@@ -11,6 +11,7 @@ import { FooterModule } from './components/footer/footer.module';
 import { IsSecureGuard } from './services/guards/isSecure.guard';
 import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
 import { GoogleAnalyticsGtagComponent } from './components/google-analytics-gtag/google-analytics-gtag.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
     declarations: [

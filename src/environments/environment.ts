@@ -4,10 +4,8 @@
 
 export const environment = {
     production: false,
+    apiBase: 'https://headless.steezapp.com',
 };
-document.write(
-    '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149575862-1"></script><script> window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-149575862-1");</script>'
-);
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -16,9 +16,7 @@ export class ProjectsComponent implements OnInit {
 
     ngOnInit(): void {
         if (!this.projectService.allProjects)
-            this.projectService.fetchProjects().subscribe(() => {
-                console.log('projects -> ', this.projectService.allProjects);
-            });
+            this.projectService.fetchProjects().subscribe(() => {});
 
         console.log('projects -> ', this.projectService.allProjects);
 
