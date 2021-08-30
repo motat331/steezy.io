@@ -25,12 +25,12 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {}
 
     darkModeInit() {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-        // Listen for changes to the prefers-color-scheme media query
-        prefersDark.addListener((mediaQuery) =>
-            this.toggleDarkMode(mediaQuery.matches)
-        );
+        // // Listen for changes to the prefers-color-scheme media query
+        // prefersDark.addListener((mediaQuery) =>
+        //     this.toggleDarkMode(mediaQuery.matches)
+        // );
 
         const darkMode = localStorage.getItem('darkmode');
 
@@ -38,8 +38,6 @@ export class HeaderComponent implements OnInit {
             this.toggleDarkMode(true);
         } else if (darkMode && darkMode == 'false') {
             this.toggleDarkMode(false);
-        } else {
-            this.toggleDarkMode(prefersDark.matches);
         }
     }
 
