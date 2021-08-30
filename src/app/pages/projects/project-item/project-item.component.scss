@@ -1,10 +1,11 @@
 p {
-    color: #333;
+    color: var(--paragraph);
     font-size: 1rem;
     line-height: 30px;
     text-align: justify;
 }
 section#introContainer {
+    background-color: var(--background-lightpink);
     div#intro {
         h4 {
             font-weight: 300;

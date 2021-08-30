@@ -50,9 +50,16 @@ const appRoutes: Routes = [
                     ),
             },
             {
-                path: 'blog',
+                path: 'blogs',
                 loadChildren: () =>
-                    import('./pages/blog/blog.module').then(
+                    import('./pages/blogs/blogs.module').then(
+                        (m) => m.BlogsModule
+                    ),
+            },
+            {
+                path: 'blog/:slug',
+                loadChildren: () =>
+                    import('./pages/blogs/blog/blog.module').then(
                         (m) => m.BlogModule
                     ),
             },

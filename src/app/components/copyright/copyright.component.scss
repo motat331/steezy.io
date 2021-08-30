@@ -4,3 +4,13 @@ a {
 #linkedin {
     width: 20px;
 }
+
+@media (max-width: 990px) {
+    .footer-split #footerNav {
+        flex-direction: column;
+        a {
+            font-size: 1rem !important;
+            margin: 5px 0px !important;
+        }
+    }
+}

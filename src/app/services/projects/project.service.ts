@@ -24,7 +24,6 @@ export class ProjectService {
                 map((projects: any) => {
                     const newProjects = projects.map((item: any) => {
                         let project: Project;
-                        console.log('Item -> ', item);
                         project = {
                             id: item.id,
                             slug: item.slug,

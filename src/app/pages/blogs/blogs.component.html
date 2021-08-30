@@ -1,0 +1,19 @@
+<div class="container my-5">
+    <div class="row my-2 mb-5">
+        <div class="col-12 text-center">
+            <h1>Tech Blog</h1>
+            <p>
+                Discussing the latest in mobile and web app development and
+                design.
+            </p>
+        </div>
+    </div>
+    <div class="row" id="blogPosts">
+        <div class="col-10 mx-auto">
+            <app-blog-item
+                *ngFor="let blog of blogService.blogs"
+                [blog]="blog"
+            ></app-blog-item>
+        </div>
+    </div>
+</div>

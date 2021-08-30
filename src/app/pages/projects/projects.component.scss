@@ -2,15 +2,14 @@
     padding-bottom: 50px;
 }
 .project-item {
-    box-shadow: 1px 1px 5px rgb(221, 221, 221);
+    background-color: var(--background);
+    box-shadow: 1px 1px 5px var(--box-shadow);
     border-radius: 7px;
-    background-color: white;
     transition: scale 0.6s ease 0s, transform 0.6s ease 0s;
     height: 100%;
     cursor: pointer;
 
     .steezy-image {
-        height: 250px;
         img {
             opacity: 1;
             display: block;
@@ -27,17 +26,17 @@
         // height: 120px;
         h2 {
             font-size: 1.5rem;
-            color: black;
+            color: var(--header);
             margin: 0;
         }
         .tags {
             font-size: 0.7rem;
-            color: grey;
+            color: var(--paragraph-light);
             margin-bottom: 15px;
         }
         .project-description {
             font-size: 0.9rem;
-            color: grey;
+            color: var(--paragraph);
             margin: 0;
         }
     }

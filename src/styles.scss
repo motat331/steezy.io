@@ -1,6 +1,36 @@
-$background-tint: #f4edf6;
+:root {
+    body.dark {
+        --background-lightgrey: #4b2f5796;
+        --background-lightpink: #4b2f5796;
+        --paragraph: white;
+        --paragraph-light: #e7e7e7;
+        --background: #242424;
+        --header: white;
+        --toggle: white;
+        --review-background: rgba(255, 255, 255, 0.942);
+        --box-shadow: #0c0c0c;
+        --link: #9c62b4;
+    }
+    body.light {
+        --background-lightgrey: #fbfbfb;
+        --background-lightpink: #f4edf6;
+        --paragraph: black;
+        --paragraph-light: #414141;
+        --background: white;
+        --header: #212529;
+        --toggle: black;
+        --review-background: transparent;
+        --box-shadow: #dddddd;
+        --link: #622c7a;
+    }
+}
+body.dark {
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
 .background {
-    background-color: #fbfbfb;
+    background-color: var(--background-lightgrey);
 }
 /* You can add global styles to this file, and also import other style files */
 html,
@@ -13,18 +43,25 @@ h1,
 h2,
 h3 {
     font-family: "Merriweather", serif;
+    color: var(--header);
 }
 h4,
 h5,
 h6 {
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
+    color: var(--header);
+}
+p,
+li {
+    color: var(--paragraph);
 }
 
 body,
 html {
     overflow-x: hidden;
     scroll-behavior: smooth !important;
+    background-color: var(--background);
 }
 fa-icon svg {
     display: inline-block;
@@ -44,10 +81,11 @@ fa-icon .fa-2x {
         font-size: 0.9rem;
     }
     a {
-        color: #622c7a;
+        color: var(--link);
     }
 }
 .form-control {
+    background-color: var(--background);
     filter: none;
     border: 0;
     border-bottom: 1px solid rgb(207, 207, 207);
@@ -55,6 +93,9 @@ fa-icon .fa-2x {
     font-size: 1.3rem;
     padding-left: 0;
     font-weight: 200;
+    &:focus {
+        background-color: var(--background);
+    }
 }
 .form-control::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -163,24 +204,26 @@ fa-icon .fa-2x {
     }
 }
 #feedbackFromClients {
-    background-color: $background-tint;
+    background-color: var(--background-lightpink);
     .review-divider {
         display: none;
     }
     .review {
         .review-title {
+            background-color: var(--review-background);
+            border-radius: 8px;
             text-align: center;
             img {
                 height: 70px;
             }
         }
         .review-text {
-            background-color: white;
+            background-color: var(--background);
             border-radius: 8px;
             position: relative;
             padding: 20px;
             transition: all 0.4s ease;
-
+            color: var(--paragraph);
             .more {
                 opacity: 0;
                 transition: all 0.4s ease;
@@ -200,7 +243,7 @@ fa-icon .fa-2x {
                 height: 0;
                 border-left: 20px solid transparent;
                 border-right: 20px solid transparent;
-                border-top: 20px solid white;
+                border-top: 20px solid var(--background);
             }
             &.review-extended {
                 min-height: 500px;
@@ -213,6 +256,10 @@ fa-icon .fa-2x {
                     width: 70px;
                 }
             }
+            .name,
+            .occupation {
+                color: var(--paragraph);
+            }
         }
     }
 }
@@ -220,12 +267,7 @@ fa-icon .fa-2x {
     max-width: 940px;
     margin: 0 auto;
 }
-.light-bg {
-    background-color: #fafafa;
-}
-.light-grey-bg {
-    background-color: #fafafa;
-}
+
 .custom-button {
     display: inline-block;
     background-color: #622c7a;
@@ -301,7 +343,7 @@ footer#copyright {
 }
 // Media Queries for Responsiveness
 
-@media (max-width: 758px) {
+@media (max-width: 990px) {
     footer {
         section#contact-area {
             h4 {

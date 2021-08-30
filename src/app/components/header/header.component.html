@@ -1,6 +1,9 @@
 <header id="main-header">
     <div class="container" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav
+            class="navbar navbar-expand-lg"
+            [ngClass]="darkMode ? 'navbar-dark' : 'navbar-light'"
+        >
             <a routerLink="/">
                 <div id="header-logo-container">
                     <!-- <img
@@ -37,7 +40,12 @@
                         >
                     </li>
                     <li routerLinkActive="active" class="my-auto nav-item">
-                        <a class="nav-link" routerLink="/projects">Projects</a>
+                        <a class="nav-link" routerLink="/projects"
+                            >Case Studies</a
+                        >
+                    </li>
+                    <li routerLinkActive="active" class="my-auto nav-item">
+                        <a class="nav-link" routerLink="/blogs">Blogs</a>
                     </li>
                     <li
                         routerLinkActive="active"
@@ -51,6 +59,13 @@
                     <li id="get-started" class="nav-item" routerLink="/contact">
                         <span>Let's Connect </span>
                         <fa-icon [icon]="faEnvelopeOpen"></fa-icon>
+                    </li>
+                    <li
+                        class="my-auto nav-item"
+                        id="toggleDarkMode"
+                        (click)="toggleDarkMode(!darkMode)"
+                    >
+                        <fa-icon [icon]="darkMode ? faSun : faMoon"></fa-icon>
                     </li>
                 </ul>
             </div>

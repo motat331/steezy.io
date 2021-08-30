@@ -1,13 +1,14 @@
-header#thin-header {
-    background-color: rgba(19, 19, 20, 0.2);
-    color: black;
-}
 .navbar {
     padding: 1rem 0rem;
 }
 
+#toggleDarkMode {
+    color: var(--toggle);
+    padding: 0px 20px;
+    cursor: pointer;
+}
 header#main-header {
-    background-size: cover;
+    background-color: var(--background);
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     #header-logo-container {
         background-color: #622c7a;
@@ -30,6 +31,7 @@ header#main-header {
             font-size: 1rem;
             font-family: "Poppins", sans-serif;
             padding: 0 1.2rem;
+            color: var(--paragraph);
         }
     }
 }
@@ -63,6 +65,7 @@ header#main-header {
     align-items: center;
     fa-icon {
         margin-left: 10px;
+        color: var(--paragraph);
     }
 }
 
@@ -86,10 +89,16 @@ header#main-header {
             }
         }
     }
+    #toggleDarkMode {
+        padding: 0;
+    }
 }
 // Media Queries for Responsiveness
 
 @media (max-width: 758px) {
+    #toggleDarkMode {
+        padding: 0;
+    }
     #get-started {
         margin-left: 0px !important;
         display: flex;

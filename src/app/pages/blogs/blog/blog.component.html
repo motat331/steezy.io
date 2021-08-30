@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <div class="row" id="header">
+        <div class="col-10 mx-auto text-center">
+            <h1>{{ blog?.title?.rendered }}</h1>
+            <div class="blog-data">
+                <span class="date">June 4, 2021</span>
+                <span class=""> | </span>
+                <span class="author">Steezapp Media Editor</span>
+            </div>
+        </div>
+    </div>
+    <div class="row my-5" id="blogFeaturedImage">
+        <div class="col-10 mx-auto text-center">
+            <img [src]="blog?.acf.image.url" alt="" class="img-fluid" />
+        </div>
+    </div>
+    <div class="row mt-5" id="blog">
+        <div class="col-10 mx-auto">
+            <div class="blog" [innerHTML]="blog?.content?.rendered"></div>
+        </div>
+    </div>
+</div>

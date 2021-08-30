@@ -1,0 +1,39 @@
+<div class="blog-item row">
+    <div class="col-12">
+        <div class="blog">
+            <div class="row">
+                <div class="col-12 col-lg-7 order-12 order-lg-1">
+                    <div class="blog-title">
+                        <h5>{{ blog.title.rendered }}</h5>
+                    </div>
+                    <div class="blog-data">
+                        <span class="date">{{
+                            blog.date | date: "MMMM dd, YYYY"
+                        }}</span>
+                        <span class=""> | </span>
+                        <span class="author">Steezapp Media Editor</span>
+                    </div>
+                    <div
+                        class="blog-snippet mt-4"
+                        [innerHTML]="blog.excerpt.rendered"
+                    ></div>
+                    <div class="read-more">
+                        <a [routerLink]="'/blog/' + blog.slug">Read More</a>
+                    </div>
+                </div>
+
+                <div
+                    class="col-12 col-lg-5 order-1 order-lg-12 mb-3 mb-lg-0"
+                    id="blogImage"
+                >
+                    <img
+                        [src]="blog.acf.thumbnail.url"
+                        alt=""
+                        class="img-fluid"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </div>
+</div>

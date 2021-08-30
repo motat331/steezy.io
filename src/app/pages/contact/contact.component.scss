@@ -4,12 +4,12 @@ h1 {
     font-size: 4rem;
 }
 p {
-    color: grey;
+    color: var(--paragraph-light);
 }
 #contactForm {
-    box-shadow: 1px 1px 5px rgb(221, 221, 221);
+    box-shadow: 1px 1px 5px var(--box-shadow);
     border-radius: 7px;
-    background-color: white;
+    background-color: var(--background);
     padding: 80px;
     .form-row {
         h5 {
