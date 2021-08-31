@@ -9,6 +9,7 @@ import { Meta } from '@angular/platform-browser';
 import { CanonicalService } from './services/canonical/canonical.service';
 import { UtilService } from './services/util/util.service';
 import { environment } from 'src/environments/environment';
+import { DarkModeService } from './services/dark-mode/dark-mode.service';
 
 @Component({
     selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent {
         private router: Router,
         private metaTagService: Meta,
         private canonicalService: CanonicalService,
-        public util: UtilService
+        public util: UtilService,
+        public darkService: DarkModeService
     ) {}
 
     ngOnInit() {

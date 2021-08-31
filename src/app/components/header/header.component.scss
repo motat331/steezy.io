@@ -10,21 +10,6 @@
 header#main-header {
     background-color: var(--background);
     font-family: "Poppins", Arial, Helvetica, sans-serif;
-    #header-logo-container {
-        background-color: #622c7a;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-
-        img {
-            // width: 100px;
-            width: 30px;
-        }
-    }
 
     li {
         a {
