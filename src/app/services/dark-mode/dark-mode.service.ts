@@ -25,12 +25,16 @@ export class DarkModeService {
             const prefersDark = window.matchMedia(
                 '(prefers-color-scheme: dark)'
             );
+
             // Listen for changes to the prefers-color-scheme media query
             prefersDark.addListener((mediaQuery) =>
                 this.toggleDarkMode(mediaQuery.matches)
             );
             const darkMode = localStorage.getItem('darkmode');
-            if (darkMode && darkMode == 'true') {
+            if (
+                (prefersDark.matches && !darkMode) ||
+                (darkMode && darkMode == 'true')
+            ) {
                 this.toggleDarkMode(true);
             } else if (darkMode && darkMode == 'false') {
                 this.toggleDarkMode(false);
@@ -39,17 +43,14 @@ export class DarkModeService {
     }
 
     toggleDarkMode(shouldAdd) {
-        if (isPlatformBrowser(this.platformId)) {
-            console.log('Should -> ', shouldAdd);
-            this.darkMode = shouldAdd;
-            localStorage.setItem('darkmode', shouldAdd);
-            if (shouldAdd) {
-                document.body.classList.toggle('dark', true);
-                document.body.classList.toggle('light', false);
-            } else {
-                document.body.classList.toggle('light', true);
-                document.body.classList.toggle('dark', false);
-            }
+        this.darkMode = shouldAdd;
+        localStorage.setItem('darkmode', shouldAdd);
+        if (shouldAdd) {
+            document.body.classList.toggle('dark', true);
+            document.body.classList.toggle('light', false);
+        } else {
+            document.body.classList.toggle('light', true);
+            document.body.classList.toggle('dark', false);
         }
     }
 }

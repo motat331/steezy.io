@@ -66,7 +66,7 @@
                         (click)="toggleDarkMode(!darkService.darkMode)"
                     >
                         <fa-icon
-                            [icon]="darkService ? faSun : faMoon"
+                            [icon]="darkService.darkMode ? faSun : faMoon"
                         ></fa-icon>
                     </li>
                 </ul>

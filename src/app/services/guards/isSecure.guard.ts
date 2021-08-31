@@ -4,7 +4,6 @@ import { CanActivate, ActivatedRouteSnapshot } from '@angular/router';
 @Injectable()
 export class IsSecureGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot): boolean {
-        console.log('CanActivate?', window.location.href);
         if (window.location.href.includes('steezysite')) {
             location.href = 'https://steezapp.com';
             return false;
